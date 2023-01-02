@@ -1,0 +1,47 @@
+.breadcumb {
+  padding: 60px 0;
+}
+
+.breadcumb_hero {
+  background: var(--tetiary);
+  height: 170px;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.breadcumb_hero_center {
+  width: 80%;
+  padding: 20px 0;
+  line-height: 40px;
+}
+
+.breadcumb_hero_top .breadcumb_hero_icon {
+  font-size: 17px;
+  margin-top: -2px;
+  margin-right: 4px;
+  color: var(--white);
+}
+
+.breadcumb_hero_top {
+  color: var(--white);
+  font-family: var(--mont);
+}
+
+.breadcumb_hero_link {
+  text-decoration: none;
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.breadcumb_hero_link:hover {
+  color: var(--white);
+}
+
+.breadcumb_hero_bottom h2 {
+  color: var(--primary);
+  font-size: 25px;
+  text-shadow: 1px 1px var(--white);
+}

@@ -1,0 +1,91 @@
+.instructor {
+  padding-top: 20px;
+  height: 100vh;
+}
+
+.instructor-top {
+  width: 96%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0px 10px;
+}
+
+.instructor-top h3 {
+  font-family: var(--Mukta);
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.instructor-top p {
+  color: var(--deep);
+}
+
+.instructor-box .form-label {
+  text-align: left !important;
+  margin-bottom: 20px;
+}
+
+.instructor-bottom {
+  position: absolute;
+  width: 100%;
+  height: 10vh;
+  bottom: 0;
+  background: var(--white);
+  display: flex;
+  padding: 0 20px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadoos);
+}
+
+.instructor-bottom button {
+  font-size: 14px;
+}
+
+/* THE SECTION OF THE MEDIA QUERY */
+@media screen and (min-width: 900px) {
+  .instructor {
+    height: 100vh;
+  }
+
+  .instructor-top {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 50px;
+  }
+
+  .instructor-top h3 {
+    font-size: 40px;
+  }
+
+  .instructor-top p {
+    color: var(--deep);
+  }
+
+  .instructor-box .form-label {
+    text-align: left !important;
+    margin-bottom: 20px;
+  }
+
+  .instructor-bottom {
+    width: 100%;
+    height: 12vh;
+    bottom: 0;
+  }
+
+  .instructor-bottom button {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .instructor-top h3 {
+    font-size: 25px;
+  }
+
+  .instructor-top p {
+    font-size: 15px;
+  }
+}

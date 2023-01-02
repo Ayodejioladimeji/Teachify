@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css?family=DM Sans:300,400,700,900');
+
+.inner button {
+  -webkit-appearance: none;
+  appearance: none;
+  /* -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; */
+  border: none;
+  background: var(--primary);
+  border-radius: 5px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  color: #fff;
+  padding: 12px 15px;
+}
+
+.inner button:hover {
+  color: #ffffff;
+  background: var(--primary);
+}
+
+/* The section of the slider wrapper */
+.slider-wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  height: 100vh;
+  background-size: cover !important;
+}
+
+.slide::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(transparent),
+    to(rgba(0, 0, 0, 0.9))
+  );
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  bottom: 0;
+  left: 0;
+}
+
+.previousButton {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: url('https://res.cloudinary.com/devsource/image/upload/v1634824787/LMS/left-chevron_k7f6em.png')
+    no-repeat center center / 25px;
+  width: 42px;
+  height: 42px;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+
+.nextButton {
+  position: absolute;
+  top: 59%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: url('https://res.cloudinary.com/devsource/image/upload/v1634824787/LMS/right-chevron_xi8zgc.png')
+    no-repeat center center / 25px;
+  width: 42px;
+  height: 42px;
+  text-indent: -9999px;
+  cursor: pointer;
+  color: blue !important;
+}
+
+.nextButton {
+  right: 0;
+}
+
+.slider-content .inner {
+  padding: 0 50px;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* .slider-content * {
+  pointer-events: none;
+} */
+
+/* .slider-content .inner button {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+} */
+
+.slider-content .inner h1 {
+  font-weight: 700;
+  max-width: 840px;
+  color: var(--white);
+  font-size: 45px;
+  line-height: 1;
+  text-shadow: 1px 1px;
+}
+
+.slider-content .inner p {
+  color: var(--white);
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 440px;
+}
+
+.slider-content .inner h1 span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--secondary);
+  text-shadow: 1px 1px var(--white);
+}
+
+.inner h4 {
+  color: var(--white);
+  font-size: 16px;
+}
+
+@media (max-height: 600px) {
+  .slider-content .inner h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .slider-content .inner h1 {
+    font-size: 28px;
+  }
+
+  .slider-content .inner p {
+    font-size: 15px;
+  }
+
+  .inner h4 {
+    font-size: 13px;
+  }
+}
+
+/* THE SECTION OF THE MEDIA QUERY BELOW 425PX */
+@media screen and (min-width: 100px) and (max-width: 320px) {
+  .slider-content .inner {
+    padding: 0 30px;
+  }
+
+  .slider-content .inner p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 425px) {
+  .slider-content .inner {
+    padding: 0 30px;
+  }
+
+  .slider-content .inner p {
+    font-size: 16px;
+  }
+
+  .inner button {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slider-wrapper {
+    position: relative;
+    height: 100vh;
+    /* overflow: auto; */
+    width: 100%;
+  }
+
+  .previousButton {
+    top: 80%;
+  }
+
+  .nextButton {
+    top: 79%;
+  }
+}

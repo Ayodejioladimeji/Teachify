@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0%;
+}
+
+body {
+  font-family: 'Montserrat';
+}
+
+/* THE SECTION OF THE GLOBAL VARIABLES */
+:root {
+  /* THE COLOURS */
+  --white: #fff;
+  --primary: #3b34b6;
+  --light-blue: #2ea2db;
+  --deep-blue: #157bad;
+  --secondary: #f16051;
+  --tetiary: #193651;
+  --lighter: #f5f1f1;
+  --light: #e5e5e5;
+  --deep: #616161;
+  --main: #f29c1f;
+  --black: #000;
+  --hover: #00ff00;
+
+  /* THE FONT-FAMILIES */
+  --mont: 'Montserrat';
+  --sans: 'DM Sans';
+  --mukta: 'Mukta';
+
+  /* SHADOWS AND TRANSITIONS */
+  --shadows: 0px 22px 24px rgba(65, 111, 244, 0.2);
+  --shadoos: 0px 0px 7px rgba(65, 111, 65, 0.2);
+  --shadow: 15px 15px 25px #ddd;
+  --transition: all 0.3s linear;
+}
+
+a {
+  text-decoration: none;
+}
+
+Link {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.loadings {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingss {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-center {
+  /* it will be used as utility class */
+  text-align: center;
+}
+select,
+button.form-control:focus,
+input.form-control:focus,
+textarea.form-control:focus,
+select.form-control:focus,
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='email']:focus,
+input[type='checkbox']:focus,
+input[type='number']:focus,
+[type='text'].form-control:focus,
+[type='password'].form-control:focus,
+[type='email'].form-control:focus,
+[type='tel'].form-control:focus,
+[type='submit'].form-control:focus,
+[contenteditable].form-control:focus {
+  box-shadow: inset 0 -1px 0 #ddd !important;
+}
+
+input[type='checkbox'] {
+  height: 5px !important;
+}
+
+input,
+select {
+  padding: 11px !important;
+  height: 50px !important;
+}
+
+button:focus {
+  box-shadow: inset 0 -1px 0 #ddd !important;
+}
+
+table th,
+td {
+  border: 1px solid var(--light) !important;
+}
+
+table th {
+  color: var(--tetiary);
+}
+
+.responsive {
+  padding: 30px 0 60px 0;
+  flex: 4;
+  width: 100%;
+  margin-left: 0px;
+  overflow: auto;
+  transition: var(--transition);
+}
+
+.response {
+  padding: 30px 0 60px 0;
+  flex: 4;
+  width: 100%;
+  margin-left: 0;
+  transition: var(--transition);
+}
+
+@media screen and (min-width: 900px) {
+  .responsive {
+    width: calc(100% - 250px);
+    margin-left: 230px;
+  }
+}
+
+.eye {
+  position: absolute;
+  top: 40%;
+  right: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+  font-size: 1px !important;
+  transform: translateY(40%);
+}
+
+.visible {
+  font-size: 20px !important;
+}

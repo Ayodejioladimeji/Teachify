@@ -1,0 +1,134 @@
+.own {
+  padding: 50px 0;
+  margin: 0;
+  background: var(--primary);
+}
+
+.own-center {
+  background: var(--white);
+  box-shadow: var(--shadoos);
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* THE SECTION OF THEE OWN LEFT */
+.own-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* line-height: 35px; */
+}
+
+.own-left-center {
+  padding: 20px;
+  width: 100%;
+}
+
+.own-left-center h3 {
+  font-family: 'DM Sans';
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 35px;
+  margin: 0;
+}
+
+.own-left-center p {
+  font-family: 'Montserrat';
+  color: var(--primary);
+  margin-top: 10px;
+}
+
+.own-left-center button {
+  background: var(--primary);
+  color: var(--white);
+  padding: 10px 25px;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  transition: var(--transition);
+  cursor: pointer;
+  font-size: 15px;
+  border-left: 4px solid var(--main);
+}
+
+.own-left-center button:hover {
+  transition: var(--transition);
+  margin-left: 35px;
+  border-radius: 0 25px 25px 0;
+  background: var(--main);
+  color: var(--white);
+}
+
+/* THE SECTION OF THE OWN RIGHT */
+.own-right {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 500px;
+}
+
+.own-right-center {
+  background: url('https://res.cloudinary.com/devsource/image/upload/v1634530038/LMS/black-young-woman-holding-laptop-pointing-screen-portrait-excited-smiling-african-american-gadget-looking-camera-209934014-removebg-preview_qzvjli.png');
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* ============================================ */
+@media screen and (min-width: 900px) {
+  .own {
+    padding: 50px 0;
+    margin: 60px 0;
+    background: transparent;
+  }
+
+  .own-center {
+    margin: 0 auto;
+    flex-direction: row;
+    height: 300px;
+  }
+
+  /* THE SECTION OF THEE OWN LEFT */
+  .own-left {
+    width: 60%;
+  }
+
+  .own-left-center {
+    padding: 0;
+    width: 70%;
+  }
+
+  /* THE SECTION OF THE OWN RIGHT */
+  .own-right {
+    width: 40%;
+    height: 100%;
+  }
+
+  .own-right-center {
+    height: 400px;
+    width: 100%;
+    /* background:yellow; */
+    margin-top: -100px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .own-right-center {
+    width: 100%;
+  }
+}
+
+/* ======================================== */
+@media screen and (max-width: 425px) {
+  .own-right {
+    height: 350px;
+  }
+
+  .own-right-center {
+    width: 100%;
+  }
+}

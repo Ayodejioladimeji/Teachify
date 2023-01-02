@@ -1,0 +1,14 @@
+.new_user {
+  padding: 30px 20px;
+}
+
+.new_user h2 {
+  font-size: 19px;
+  margin-bottom: 15px;
+  color: var(--secondary);
+}
+
+
+@media screen and (max-width:650px){
+  
+}

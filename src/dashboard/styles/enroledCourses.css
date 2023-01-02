@@ -1,0 +1,123 @@
+.enrolled-courses {
+  margin: 5px;
+  padding: 20px;
+  border: 1px solid var(--light);
+  max-width: 100%;
+}
+
+.enrolled-courses h2 {
+  font-size: 15px !important;
+}
+
+.enrolled-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-direction: row;
+}
+
+.enrolled-header .form-group {
+  width: 50%;
+}
+
+.enrolled-courses .enroll-input {
+  width: 50%;
+}
+
+/* .enrolled-header button */
+
+.enrolled-header button {
+  background: var(--secondary) !important;
+  color: var(--white);
+  outline: none;
+}
+
+.enrolled-header button:hover {
+  color: var(--white);
+  background: var(--primary) !important;
+}
+
+.enrolled-courses h2 {
+  font-size: 22px;
+  margin-bottom: 25px;
+  color: var(--secondary);
+}
+
+.enrolled-center {
+  overflow-x: scroll;
+}
+
+.enrolled-center table {
+  border: 1px solid var(--light);
+  /* width: 66rem; */
+}
+
+table td {
+  border: 1px solid var(--light);
+}
+
+.enrolled-center .table tr th {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+}
+
+.enrolled-center .table tr td {
+  text-align: center;
+}
+
+.table-image {
+  width: 80px;
+  height: 60px;
+  margin: 0 auto;
+  border: 2px solid var(--secondary);
+}
+
+.table-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.enrolled-center button {
+  /* background: var(--primary); */
+  color: var(--white);
+  font-size: 13px;
+  margin-right: 8px;
+}
+.enrolled-center button:hover {
+  color: var(--white);
+  background: var(--secondary);
+}
+
+.action-btn {
+  font-size: 15px !important;
+  margin-top: -4px;
+  margin-right: 3px;
+}
+
+/* ==================================== */
+/* THE SECTION OF THE MEDIA QUERY */
+@media screen and (max-width: 426px) {
+  .enrolled-courses {
+    padding: 20px 10px;
+  }
+
+  .enrolled-header {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .enrolled-header .form-group {
+    width: 100%;
+  }
+
+  .enroll-input {
+    width: 100%;
+  }
+
+  .enrolled-header button {
+    display: none;
+  }
+}

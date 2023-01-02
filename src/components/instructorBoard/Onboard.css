@@ -1,0 +1,33 @@
+.success_board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  height: 100vh;
+}
+
+.success_center {
+  box-shadow: var(--shadoos);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 95%;
+  padding: 50px 5px;
+  border: 1px solid var(--light);
+  text-align: center;
+}
+
+.success_center h4 {
+  color: var(--primary);
+  font-family: var(--mont);
+  font-weight: bold;
+}
+
+@media screen and (min-width: 900px) {
+  .success_center {
+    padding: 50px 0;
+    width: 50%;
+  }
+}

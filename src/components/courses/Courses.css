@@ -1,0 +1,92 @@
+.courses {
+  padding: 60px 0;
+}
+
+.courses-main {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-left {
+  width: 20%;
+}
+
+.main-right {
+  width: 78%;
+}
+
+.card-header .sel {
+  padding: 11px 20px;
+  background: orange !important;
+  display: none;
+}
+/* ================================== */
+/* The section of the course left */
+.form-group label {
+  font-size: 13px;
+}
+
+.form-group input,
+.form-group select {
+  font-size: 13px;
+}
+
+/* ===================================== */
+/* The section of the course right */
+.carding {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+
+.cardings {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  /* width: 90%; */
+}
+
+.carding .card {
+  width: 100%;
+  height: 400px;
+}
+
+.carding .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.carding .card h5 {
+  font-size: 12px;
+  margin-top: -5px;
+}
+
+.carding .card p {
+  font-size: 12px;
+}
+
+.carding .card-content h4 {
+  font-size: 15px;
+}
+
+.carding .card-content img {
+  width: 40px;
+  height: 40px;
+}
+
+.carding button {
+  background: var(--primary) !important;
+  color: var(--white);
+  padding: 5px;
+  font-size: 14px;
+}
+
+.carding button:hover {
+  background: var(--tetiary) !important;
+  color: var(--white);
+}
+
+.carding .card-footer {
+  font-size: 12px;
+}

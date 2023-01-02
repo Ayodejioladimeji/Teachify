@@ -1,0 +1,14 @@
+.create-course {
+  padding: 30px 100px;
+}
+
+.create-course h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--secondary);
+}
+
+.create-course textarea {
+  resize: none;
+  height: 100px !important;
+}

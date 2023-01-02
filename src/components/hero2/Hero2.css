@@ -1,0 +1,30 @@
+.what-we-offer-2 {
+  padding: 50px 10px;
+  background: var(--white);
+}
+
+.what-we-offer-2 .card {
+  background: #ffffff;
+  box-shadow: var(--shadoos);
+  border-radius: 30px;
+  border: none;
+}
+
+.what-we-offer-2 .card img {
+  margin: 10px auto 0;
+}
+
+.what-we-offer-2 .card .card-title {
+  font-size: 18px;
+}
+
+@media screen and (min-width: 900px) {
+  .what-we-offer-2 {
+    padding: 50px 50px 80px;
+    background: var(--white);
+  }
+
+  .what-we-offer-2 .card {
+    height: 220px;
+  }
+}

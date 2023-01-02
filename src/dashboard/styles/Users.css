@@ -1,0 +1,118 @@
+.users {
+  padding: 30px;
+}
+
+.users h2 {
+  font-size: 18px;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.users-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-direction: row;
+}
+
+.users-top .enroll-input {
+  width: 50%;
+}
+
+.users-top-iconbox {
+  width: 40%;
+}
+
+.users-top-iconbox button {
+  margin: 0 15px;
+  font-size: 13px;
+}
+
+.users-top-iconbox button:last-child {
+  border: 1px solid var(--secondary);
+}
+
+.users-top-iconbox button:hover {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.icon-box {
+  font-size: 30px;
+}
+
+.users-bottom {
+  overflow: auto;
+}
+
+.users-bottom table th {
+  border: 1px solid var(--light) !important;
+  text-align: center;
+}
+
+.users-bottom table td {
+  text-align: center;
+}
+
+.users-bottom button {
+  margin: 0 5px;
+  font-size: 13px;
+}
+
+.action-btn {
+  font-size: 15px !important;
+  margin-right: 5px;
+  margin-top: -3px;
+}
+
+.check {
+  height: 18px;
+  width: 18px;
+  margin-top: 5px;
+}
+
+btn {
+  display: block;
+}
+
+.users-buttons {
+  padding: 0;
+  width: 30%;
+}
+
+/* ========================================== */
+/* THE SECTION THAT CREATES THE USERS */
+/* ============================================= */
+.create {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.create-center {
+  width: 50%;
+  padding: 20px;
+}
+
+.create-center h3 {
+  color: var(--secondary);
+  font-size: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+@media screen and (max-width: 650px) {
+  .users-top {
+    flex-direction: column;
+  }
+
+  .users {
+    padding: 30px 10px;
+  }
+
+  .users-top .enroll-input {
+    width: 100%;
+  }
+}

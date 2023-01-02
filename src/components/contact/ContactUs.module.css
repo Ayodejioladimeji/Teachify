@@ -1,0 +1,117 @@
+.contact-us {
+  padding-top: 80px;
+}
+
+.callback {
+  display: flex;
+  flex-direction: column;
+  background: var(--light);
+  /* padding-bottom: 5rem; */
+}
+
+.callback-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* THE SECTION OF THE CALLBACK RIGHT */
+.callback-right {
+  display: block;
+  padding: 30px 60px;
+}
+
+.callback label {
+  display: block;
+  padding: 20px 0 5px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.6px;
+  color: var(--primary);
+}
+
+.callback-contact {
+  overflow: hidden;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.callback-contact input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.callback input::-webkit-input-placeholder {
+  font-size: 12px;
+}
+
+.callback textarea {
+  height: 150px;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.callback .btn {
+  background: var(--primary);
+  color: var(--white);
+  padding: 18px;
+  width: 100%;
+  border: none;
+  outline: none;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+  font-size: 15px;
+}
+
+.callback .btn:hover {
+  color: var(--white);
+  background: var(--secondary);
+}
+
+.callback .msg {
+  display: none;
+  color: green;
+  text-align: center;
+}
+
+.callback .msgAppear {
+  display: block;
+}
+
+@media screen and (min-width: 900px) {
+  .callback {
+    flex-direction: row;
+  }
+
+  .callback-left {
+    width: 60%;
+  }
+
+  .callback-right {
+    width: 40%;
+  }
+
+  .callback textarea {
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 425px) {
+  .callback-right {
+    padding: 30px 10px;
+  }
+}

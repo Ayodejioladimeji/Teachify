@@ -1,0 +1,39 @@
+.category {
+  padding: 60px 0;
+}
+
+.card-header .form-group {
+  width: 100%;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.card-header input,
+.card-header select {
+  width: 70%;
+}
+
+@media screen and (max-width: 900px) {
+  .card-header {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .card-header input,
+  .card-header select {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .card-header .form-group {
+    width: 100%;
+  }
+}

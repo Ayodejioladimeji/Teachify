@@ -1,0 +1,100 @@
+.categories {
+  padding: 10px 10px 50px 10px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.categories-top {
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.categories-top h2 {
+  font-size: 22px;
+  color: var(--secondary);
+}
+
+.categories-top-iconbox button {
+  margin: 0 15px;
+  font-size: 13px;
+}
+
+.categories-top-iconbox button:last-child {
+  border: 1px solid var(--secondary);
+}
+
+.categories-top-iconbox button:hover {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.icon-box {
+  font-size: 30px;
+}
+
+.categories-bottom table th {
+  border: 1px solid var(--light) !important;
+  /* text-align: center; */
+  padding-left: 40px;
+}
+
+.categories-bottom table td {
+  /* text-align: center; */
+  padding-left: 40px;
+}
+
+.categories-bottom button {
+  margin: 0 10px;
+  font-size: 13px;
+}
+
+.action-btn {
+  font-size: 15px !important;
+  margin-right: 5px;
+  margin-top: -3px;
+}
+
+.check {
+  height: 18px;
+  width: 18px;
+  margin-top: 5px;
+}
+
+/* ========================================== */
+/* THE SECTION THAT CREATES THE CATEGORIES */
+/* ============================================= */
+.create {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 60vh; */
+}
+
+.create-center {
+  width: 50%;
+  padding: 20px;
+}
+
+.create-center h3 {
+  color: var(--secondary);
+  font-size: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+
+/* THE SECTION OF THE MEDIA QUERY */
+@media screen and (max-width:650px){
+  .categories{
+    width:100%;
+  }
+
+  .create-center{
+    width:90%!important;
+  }
+
+  .categories-bottom{
+    overflow:auto;
+  }
+
+}

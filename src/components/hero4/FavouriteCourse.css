@@ -1,0 +1,68 @@
+.favorite-course,
+.new-course {
+  padding: 50px 50px;
+}
+
+.favorite-course h3 {
+  font-family: var(--mukta);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 31px;
+  color: var(--primary);
+}
+
+.favourite-cat {
+  margin-top: -5px;
+  margin-right: 5px;
+}
+
+.favorite-course button {
+  background: var(--secondary);
+  color: var(--white);
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.favorite-course button:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.favorite-course .row .col-12 .card {
+  background: rgba(46, 162, 219, 0.13);
+  padding: 15px 15px 30px;
+  border: 0;
+  border-radius: 15px;
+}
+
+.favorite-course .row .col-12 .card span img {
+  background: rgba(18, 123, 175, 0.13);
+  /* I used another color here, the color here and the card are the same with what i found on figma */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.favorite-course .row .col-12 .card .card-body .card-title {
+  font-family: var(--mont);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--deep);
+}
+
+.favorite-course .row .col-12 .card .card-body .card-text {
+  font-family: var(--mont);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--tetiary);
+}
+
+@media screen and (max-width: 600px) {
+  .favorite-course {
+    padding: 20px;
+  }
+}

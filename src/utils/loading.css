@@ -1,0 +1,44 @@
+/* Styling the spinner that indicates loading */
+
+.loading{
+    height:100vh;
+
+}
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-width: 100%;
+    position: fixed;
+    z-index: -999;
+    top: 0;
+    left: 0;
+}
+
+.spinner-border {
+    width: 4em;
+    height: 4em;
+    color: var(--primary);
+}
+
+
+/* THE SECTION OF THE BUTTON ROLLER */
+.spin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-width: 100%;
+    position: fixed;
+    z-index: -999;
+    top: 0;
+    left: 0;
+}
+
+.spin-border {
+    width: 2em;
+    height: 2em;
+    color: var(--primary);
+}

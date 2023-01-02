@@ -1,0 +1,46 @@
+/* THE SECTION OF THE SOCIAL DISPLAY COMMENT */
+
+.social-display-comment {
+  border: 1px solid var(--light);
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+.social-display-comment p {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--deep);
+  /* font-family: var(--sans); */
+  margin-top: 5px;
+  /* font-weight: 500; */
+}
+
+/* THE SECTION OF THE SOCIAL DISPLAY TEXT FIELD */
+.social-display-textfield {
+  background: var(--light);
+  padding: 0 !important;
+}
+
+.social-display-textfield input {
+  width: 100%;
+  border: 1px solid var(--light);
+  outline: none;
+  resize: none;
+  height: 50px;
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 25px;
+}
+
+.social-display-textfield input::-webkit-input-placeholder {
+  padding: 1px;
+}
+
+.social-display-textfield .social-btn {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.social-display-textfield .social-btn:hover {
+  background: var(--secondary) !important;
+}

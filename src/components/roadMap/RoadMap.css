@@ -1,0 +1,73 @@
+.roadmap {
+  padding: 75px 0;
+  /* height: 100vh; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.roadmap-top {
+  background: var(--tetiary);
+  color: var(--white);
+  text-align: center;
+  width: 100%;
+  padding: 50px 0;
+  margin-bottom: 20px;
+}
+
+.road-center {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  background: var(--lighter);
+  padding: 20px;
+}
+
+.road-center a {
+  text-decoration: none;
+}
+
+.road-card {
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+  color: var(--white);
+}
+
+.road-card h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.road-card p {
+  font-size: 15px;
+}
+
+/* THE SECTION OF THE MEDIA QUERY */
+@media screen and (min-width: 900px) {
+  .road-center {
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    background: var(--lighter);
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .road-center {
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 10px;
+  }
+
+  .roadmap-top h4 {
+    font-size: 17px;
+  }
+}

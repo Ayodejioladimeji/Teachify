@@ -1,0 +1,152 @@
+.profiling {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avata {
+  width: 45% !important;
+  max-width: 300px;
+  max-height: 300px;
+  overflow: hidden;
+  position: relative;
+  margin: 15px auto;
+  float: right;
+  cursor: pointer;
+  border-radius: 0 !important;
+}
+
+@media screen and (min-width: 900px) {
+  .avata {
+    width: 25% !important;
+  }
+}
+
+.avata img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.avata span {
+  position: absolute;
+  bottom: -25%;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: var(--primary);
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  padding: 3px;
+  z-index: 999;
+}
+
+.avata span p {
+  margin-top: 5px;
+  font-weight: 700;
+}
+
+.avata #file_up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.avata .camera {
+  font-size: 33px;
+  color: var(--secondary);
+}
+
+.load {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.load img {
+  padding: 10px;
+  object-fit: cover;
+}
+
+.profile-center {
+  padding: 20px !important;
+}
+
+.profile-center .pass {
+  position: relative;
+}
+
+.profile-center textarea {
+  resize: none;
+  height: 90px !important;
+  border-radius: 0 !important;
+}
+
+.img-thumbnail {
+  object-fit: cover;
+}
+
+.profile-input {
+  padding: 10px;
+  background: var(--lighter);
+  margin-bottom: 15px;
+  overflow: hidden !important;
+  width: 100%;
+  display: block;
+}
+
+.profile-text {
+  height: 120px;
+  background: var(--lighter);
+  padding: 10px;
+  overflow: auto;
+}
+
+.profile-button button {
+  color: var(--white);
+  background: var(--primary);
+  border-radius: 0;
+}
+
+.profile-button button:hover {
+  color: var(--white);
+  background: var(--secondary);
+}
+
+@media screen and (max-width: 425px) {
+  .profiling {
+    margin-left: 0;
+  }
+
+  .profile-center {
+    width: 95%;
+  }
+
+  .profile-center input {
+    padding: 12px 25px;
+    width: 100% !important;
+  }
+
+  .profile-button button {
+    padding: 15px !important;
+    width: 100% !important;
+  }
+
+  .avata span {
+    height: 50%;
+  }
+}
+
+.view-top button {
+  font-size: 15px;
+}

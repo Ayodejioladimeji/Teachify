@@ -1,0 +1,420 @@
+.navbar {
+  box-shadow: var(--shadoos);
+  width: 100%;
+  position: fixed !important;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+  background: var(--white);
+  /* height: 70px; */
+}
+
+.header-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.display-menu {
+  display: none;
+  width: 55%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.display-menu .menu-btn {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+/* THE DROPDOWN SECTION */
+.navbar-nav .dropdown {
+  background-color: var(--white);
+  font-size: 18px;
+  line-height: 30px;
+  box-shadow: var(--shadoos);
+  cursor: pointer;
+  margin: 10px auto;
+  width: 50%;
+  transition: var(--transition);
+}
+
+.navbar-nav .menu-icon {
+  margin-top: 3px;
+  color: var(--tetiary);
+}
+
+.navbar-nav .dropdown .nav-link span {
+  font-family: var(--mont);
+  font-weight: 500;
+  color: var(--tetiary);
+  font-size: 17px;
+}
+
+.login-box a {
+  background-color: var(--white);
+  text-decoration: none;
+  padding: 12px;
+  color: var(--primary);
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 13px;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 1px solid var(--light);
+}
+
+.login-box a:last-child {
+  background-color: var(--primary);
+  color: var(--white);
+  margin-left: 10px;
+}
+
+.login-box-icon {
+  margin-right: 5px;
+  font-size: 17px !important;
+}
+
+/* -=============================================-- */
+/* THE SECTION OF THE DROPDOWN */
+.main-dropdown {
+  padding: 0;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.drop-nav {
+  position: relative;
+  right: 20px;
+  margin: 0;
+}
+
+.drop-nav a {
+  text-transform: capitalize;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.drop-div {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.drop-div .drop-flex {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.notificate {
+  background: var(--white);
+  position: absolute;
+  top: 50px;
+  right: -50px;
+  width: 240px;
+  padding: 15px;
+  line-height: 25px;
+  box-shadow: var(--shadoos);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.notificate .notification {
+  color: var(--secondary);
+  font-size: 10px;
+}
+
+.notificate button {
+  font-size: 11px;
+}
+
+.topbarIconContainer {
+  position: relative;
+  cursor: pointer;
+  margin-right: 15px;
+  color: #555;
+  width: 100%;
+}
+
+.topIconBadge {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+/* =================================== */
+.drop-nav .dropdown {
+  position: absolute;
+  background: var(--white);
+  box-shadow: var(--shadoos);
+  width: 50% !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: block;
+  z-index: 9999;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.dropdown .drop-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.drop-left {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  border: 2px solid var(--primary);
+  margin: 0 auto 10px auto;
+  position: relative;
+}
+
+.drop-left img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /* object-fit: cover; */
+}
+
+.drop-right h5 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--deep);
+}
+
+.drop-right span {
+  font-size: 12px;
+  line-height: 10px;
+  display: block;
+  color: var(--primary);
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--tetiary);
+  position: relative;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.drop-nav .dropdown li {
+  display: block;
+  font-size: 14px;
+  padding: 7px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--tetiary);
+  font-weight: 500;
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+}
+
+.top-icon {
+  margin: -3px 5px 0 0;
+  font-size: 16px !important;
+}
+
+.drop-nav .dropdown li:hover {
+  background: var(--light);
+}
+
+.become {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 23%;
+}
+
+.become .become-link:hover {
+  text-decoration: none;
+  background: transparent;
+}
+
+.become a {
+  text-decoration: none;
+}
+
+.become-link {
+  position: relative;
+}
+
+/* ================================================== */
+@media screen and (max-width: 990px) {
+  .display-menu {
+    display: flex;
+  }
+
+  .container-fluid .menu-btn {
+    display: block;
+    float: right;
+  }
+
+  .login-box {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .drop-flexer {
+    display: flex;
+    align-items: center;
+  }
+
+  .drop-div .drop-flex {
+    display: none;
+  }
+
+  .notificate {
+    top: 110px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    z-index: 999;
+  }
+
+  .badge-icon {
+    font-size: 20px !important;
+  }
+}
+
+@media screen and (min-width: 988px) {
+  .navbar-nav .dropdown {
+    width: 100%;
+    margin-left: 80px;
+  }
+
+  .drop-div {
+    width: 100%;
+  }
+}
+
+/* ======================================================= */
+@media screen and (min-width: 1000px) {
+  .navbar {
+    height: 80px;
+  }
+
+  .header-img {
+    height: 70px;
+    width: 70px;
+  }
+
+  /* THE DROPDOWN SECTION */
+  .navbar-nav .dropdown {
+    margin-left: 250px;
+  }
+
+  .drop-div {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .drop-nav .dropdown {
+    position: absolute;
+    background: var(--white);
+    box-shadow: var(--shadoos);
+    width: 180% !important;
+    right: -15px;
+    left: 30px;
+    top: 40px;
+    /* display: none; */
+    z-index: 9999;
+    padding: 12px;
+    border-radius: 5px;
+  }
+}
+
+/* ========================================================= */
+/* THE SECTION OF THE MEDIA QUERY */
+@media screen and (max-width: 768px) {
+  .header-img {
+    width: 50px;
+    height: 50px;
+    margin-top: -7px;
+  }
+
+  .navbar-nav .dropdown {
+    width: 90%;
+    margin-left: auto;
+  }
+
+  .navbar-nav .menu-icon {
+    margin: 3px 10px !important;
+  }
+
+  .login-box {
+    margin-bottom: 20px;
+  }
+
+  .drop-nav {
+    left: 5px;
+  }
+
+  .drop-div {
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .drop-nav .dropdown {
+    width: 90% !important;
+    left: 49%;
+  }
+}
+
+/* MEDIA QUERY FOR SMALLER DEVICES */
+@media screen and (max-width: 425px) {
+  .navbar-nav .dropdown {
+    width: 90%;
+    margin-left: auto;
+  }
+
+  .navbar-nav .menu-icon {
+    margin: 3px 10px !important;
+  }
+
+  .login-box {
+    margin-bottom: 20px;
+  }
+
+  .drop-nav {
+    left: 5px;
+  }
+
+  .drop-div {
+    width: 100%;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .drop-nav .dropdown {
+    width: 90% !important;
+    left: 49%;
+  }
+}

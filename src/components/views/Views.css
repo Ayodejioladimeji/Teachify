@@ -1,0 +1,45 @@
+.views {
+  padding: 70px 0 0 0;
+}
+
+.views-top {
+  background: #000;
+  margin-bottom: 20px;
+  /* height: 500px; */
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: relative; */
+  padding: 20px 0;
+}
+
+/* The section of the views bottom */
+.views-bottom {
+  padding: 0px;
+}
+
+.body-one {
+  /* padding: 30px 60px; */
+  border-bottom: 2px solid var(--light);
+}
+
+.rating-value {
+  display: flex;
+  align-items: center;
+}
+
+.rating-value span {
+  margin-left: 5px;
+  font-size: 11px;
+}
+
+.rating-value .rev {
+  margin-top: 3px;
+}
+
+@media screen and (min-width: 1000px) {
+  .views-bottom {
+    padding: 50px;
+  }
+}

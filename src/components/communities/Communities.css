@@ -1,0 +1,67 @@
+.community {
+  padding: 80px 0px;
+}
+
+.community .list-group-item {
+  background: var(--lighter) !important;
+}
+
+.social {
+  border: 1px solid var(--lighter);
+}
+
+/* THE SECTION OF THE MIDDLE */
+
+.card-upload {
+  width: 100%;
+  padding: 10px 20px !important;
+}
+
+.card-upload .send-text {
+  width: 100% !important;
+  height: 50px;
+  outline: none;
+  border: 1px solid var(--lighter);
+  resize: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.card-upload .card-btn {
+  display: flex;
+}
+
+.card-btn .social-btn {
+  padding: 5px 15px;
+  border-radius: 150px;
+  font-size: 13px;
+  border: 1px solid var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.social-btn:hover {
+  background: var(--light) !important;
+  transition: var(--transition);
+}
+
+.social-btn .social-icon {
+  font-size: 15px;
+  margin-right: 5px;
+  margin-top: 1px;
+}
+
+@media screen and (min-width: 1000px) {
+  .community {
+    padding: 80px 30px;
+  }
+
+  .lefter,
+  .righter {
+    display: none !important;
+  }
+}

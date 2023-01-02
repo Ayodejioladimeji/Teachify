@@ -1,0 +1,21 @@
+.home {
+  padding-top: 30px;
+  flex: 4;
+  width: calc(100% - 250px);
+  margin-left: 230px;
+  overflow: auto;
+  transition: var(--transition);
+}
+
+.homeWidgets {
+  display: flex;
+  margin: 20px;
+}
+
+
+@media screen and (max-width:900px){
+  .home {
+    width:100%;
+    margin-left: 0px;
+  }
+}

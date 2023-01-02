@@ -1,0 +1,58 @@
+.learn {
+  padding: 0px;
+}
+
+.learn h2 {
+  font-size: 20px;
+  color: var(--tetiary);
+}
+
+.learn li {
+  color: var(--deep);
+  font-size: 10px !important;
+  line-height: 33px;
+  display: flex;
+  flex-direction: column;
+}
+
+.learn .learn-check {
+  color: var(--primary);
+  margin-top: -3px;
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.card-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  -webkit-column-gap: 3rem;
+  -moz-column-gap: 3rem;
+  column-gap: 3rem;
+  row-gap: 1rem;
+}
+
+/* THE SECTION OF THE MEDIA QUERY */
+@media screen and (min-width: 1000px) {
+  .learn {
+    padding: 30px;
+  }
+
+  .learn h2 {
+    font-size: 22px;
+  }
+
+  .learn li {
+    color: var(--deep);
+    font-size: 14px;
+    line-height: 33px;
+    display: flex;
+  }
+
+  .learn .learn-check {
+    font-size: 20px;
+  }
+
+  .card-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

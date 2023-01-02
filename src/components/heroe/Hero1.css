@@ -1,0 +1,17 @@
+.what-we-offer-1 {
+  background-color: var(--primary);
+  padding: 30px 50px;
+  overflow-x: hidden !important;
+  color: var(--white);
+  display: none;
+}
+
+.container {
+  width: 100% !important;
+}
+
+@media screen and (min-width: 900px) {
+  .what-we-offer-1 {
+    padding: 30px 30px;
+  }
+}

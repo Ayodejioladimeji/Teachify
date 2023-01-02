@@ -1,0 +1,58 @@
+.course-decision {
+  padding: 40px 100px;
+  background: yellow;
+}
+
+.course-decision .course-decision-content {
+  border-radius: 30px;
+  background: orange;
+  box-shadow: 0px 4.72199px 4.72199px rgba(0, 0, 0, 0.25);
+}
+
+.course-decision .course-decision-content .row .col-md-7 {
+  border-top-left-radius: 30px;
+}
+
+.order-1 .turn {
+  font-size: 24px !important;
+  font-family: var(--sans);
+  margin-top: 30px;
+}
+
+.course-decision .course-decision-content .row .col-md-7 .second-part {
+  background-color: var(--primary);
+  color: var(--white);
+  border-bottom-left-radius: 30px;
+}
+
+.course-decision .course-decision-content .row .col-md-7 h2 {
+  font-family: var(--mont);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32.6384px;
+  /* line-height: 64px; */
+
+  color: #193651;
+}
+
+.course-decision .course-decision-content .row .col-md-7 .second-part p {
+  font-size: 18px;
+}
+
+.course-decision .course-decision-content .row .col-md-7 .second-part a {
+  background: var(--secondary);
+  text-decoration: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 12px 24px !important;
+}
+
+.second-part a:hover {
+  background: var(--tetiary);
+}
+
+.course-decision .course-decision-content .row .col-md-5 img {
+  height: 356px;
+  width: 100%;
+  object-fit: cover;
+}

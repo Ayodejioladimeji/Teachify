@@ -1,0 +1,105 @@
+.details {
+  padding: 70px 0;
+}
+
+.details-hero {
+  background: var(--tetiary);
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.details-left {
+  width: 100%;
+}
+
+.details-left h1 {
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 21px;
+  line-height: 45px;
+}
+
+.details-left h4 {
+  color: var(--white);
+  font-size: 13px;
+  font-family: var(--mont);
+  line-height: 25px;
+}
+
+.details-left p,
+.details-left span {
+  color: var(--white);
+  font-size: 13px;
+}
+
+.details-left button {
+  font-size: 12px;
+}
+
+.details-icon {
+  color: var(--white);
+  margin-right: 8px;
+  margin-top: -5px;
+}
+
+.rating-value .revi {
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+/* THE SECTION OF THE RIGHT */
+/* ============================================ */
+.details-right {
+  border: 1px solid var(--light);
+  padding: 10px;
+  width: 95%;
+  margin-top: 30px;
+}
+
+.details-right-center {
+  height: 200px;
+}
+
+.details-right-center img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.details-right button {
+  border-radius: 0 !important;
+}
+
+/* THE SECTION OF THE MEDIA QUERY */
+@media screen and (min-width: 1000px) {
+  .details-hero {
+    padding: 20px 90px;
+    flex-direction: row;
+  }
+
+  .details-left {
+    width: 55%;
+  }
+
+  .details-left h1 {
+    font-size: 30px;
+  }
+
+  .details-left h4 {
+    font-size: 15px;
+  }
+
+  .details-left p,
+  .details-left span {
+    font-size: 15px;
+  }
+
+  /* THE SECTION OF THE RIGHT */
+  /* ============================================ */
+  .details-right {
+    width: 30%;
+  }
+}

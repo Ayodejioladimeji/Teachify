@@ -1,0 +1,161 @@
+.login {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+.login-center {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
+  padding: 150px 0;
+}
+
+.login-center .list-group-item.active {
+  background: var(--light) !important;
+  outline: none !important;
+  border: none !important;
+  color: var(--secondary) !important;
+}
+
+.login-center label {
+  color: var(--primary);
+}
+
+.login-center input::-webkit-input-placeholder {
+  font-size: 14px;
+}
+
+.login-center input,
+.login-center select {
+  font-size: 14px;
+}
+
+.login-center button {
+  background: var(--primary);
+  color: var(--white);
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.login-center button:hover {
+  color: var(--white);
+  background: var(--primary);
+}
+
+.login-center .pass .eyes {
+  position: absolute;
+  top: 40%;
+  right: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+  font-size: 15px;
+  transform: translateY(50%);
+}
+
+.login-center .pass {
+  position: relative;
+}
+
+.login-center .group ::-webkit-input-placeholder {
+  font-size: 13px;
+}
+
+.login-center .form-check input {
+  border: 1px solid var(--light) !important;
+  height: 18px;
+  width: 18px;
+  margin-right: 5px;
+  border-radius: 15px;
+  -webkit-appearance: none;
+  margin-left: 1px !important;
+}
+
+.login-center .social-box {
+  width: 200px;
+  margin: 10px auto;
+}
+
+/* .login-center .social-one {
+  background: var(--secondary) !important;
+  padding: 10px 15px;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 14px;
+} */
+
+.login-center .icon-social {
+  margin-right: 5px;
+  font-size: 13px;
+}
+
+.login-center .already {
+  text-decoration: none;
+}
+
+/* ============================================== */
+/* THE SECTION OF THE MEDIA QUERY */
+@media screen and (min-width: 1000px) {
+  .login {
+    display: flex;
+    align-items: center;
+    /* padding: 130px 0; */
+  }
+
+  .login-center {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .login {
+    padding-left: 0;
+  }
+
+  .login {
+    padding-left: 0;
+  }
+
+  .login-center {
+    width: 98%;
+  }
+
+  .login-center input {
+    padding: 12px;
+  }
+
+  .login-center select {
+    padding: 12px;
+  }
+
+  .login-center button-div {
+    padding: 0;
+  }
+
+  .login-center button {
+    width: 100% !important;
+    padding: 15px !important;
+  }
+
+  .social-box {
+    width: 230px;
+    margin: 10px auto;
+  }
+
+  .login-center .social-one {
+    padding: 5px !important;
+    height: 50px;
+  }
+}

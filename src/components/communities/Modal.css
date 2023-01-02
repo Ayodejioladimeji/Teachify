@@ -1,0 +1,170 @@
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(17, 15, 15, 0.493);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modalContainer {
+  width: 97%;
+  max-width: 500px;
+  border-radius: 12px;
+  background-color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+/* THE SECTION OF THE MEDIA QUERY */
+@media screen and (min-width: 1000px) {
+  .modalContainer {
+    width: 90%;
+  }
+}
+
+.modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-home {
+  width: 100%;
+}
+
+.modal-home .textarea-div {
+  position: relative;
+}
+
+.smiley {
+  position: absolute;
+  right: 5px;
+  top: 24px;
+  cursor: pointer;
+}
+
+.add-display {
+  border: 1px solid var(--light);
+  padding: 5px 10px;
+  border-radius: 10%;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.modal-home textarea {
+  width: 100%;
+  height: 70px;
+  border: 1px solid var(--light);
+  border-radius: 3px;
+  padding: 10px;
+  resize: none;
+  outline: none;
+}
+
+.modal-home textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.upload {
+  height: 200px;
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 15px;
+  /* margin: 0 10px; */
+  position: relative;
+}
+
+#file_up {
+  position: relative;
+  width: 100%;
+  height: 100% !important;
+  outline: none;
+}
+
+#file_up::before {
+  content: 'Add Photos';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0;
+  background: var(--light);
+  color: var(--deep);
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#file_img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#file_img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+#file_img .span {
+  cursor: pointer;
+  font-size: 25px;
+  color: var(--secondary);
+}
+
+.destroy-cancel {
+  height: 30px;
+  width: 30px;
+  border-radius: 150px;
+  background: var(--deep);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.destroyer {
+  color: var(--white);
+}
+
+.titleCloseBtn {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: 1px solid var(--light);
+}
+
+.titleCloseBtn button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: -5px;
+  z-index: 999;
+}
+
+#cancelBtn {
+  background-color: var(--secondary);
+}
+
+#not-allowed {
+  cursor: not-allowed;
+}

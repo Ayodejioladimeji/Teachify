@@ -1,0 +1,14 @@
+.network-section .sidebarListItem {
+  font-size: 15px;
+}
+
+.network-section .sidebarList .sidebarIcon {
+  font-size: 20px !important;
+}
+
+
+@media screen and (max-width:990px){
+  .navigation{
+    display:none;
+  }
+}

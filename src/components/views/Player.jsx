@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Container from '@material-ui/core/Container';
 import ReactPlayer from 'react-player';
 import { makeStyles } from '@material-ui/core/styles';
-import screenful from 'screenfull';
+// import screenful from 'screenfull';
 import Controls from './Controls';
 import Loader from 'react-loader-spinner';
 
@@ -180,9 +180,9 @@ const Player = ({ link, title }) => {
     });
   };
 
-  const toggleFullScreen = () => {
-    screenful.toggle(playerContainerRef.current);
-  };
+  // const toggleFullScreen = () => {
+  //   screenful.toggle(playerContainerRef.current);
+  // };
 
   const handleMouseMove = () => {
     controlsRef.current.style.visibility = 'visible';
@@ -282,7 +282,7 @@ const Player = ({ link, title }) => {
             onChangeDispayFormat={handleDisplayFormat}
             playbackRate={playbackRate}
             onPlaybackRateChange={handlePlaybackRate}
-            onToggleFullScreen={toggleFullScreen}
+            // onToggleFullScreen={toggleFullScreen}
             volume={volume}
             title={title}
           />

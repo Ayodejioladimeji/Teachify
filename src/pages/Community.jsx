@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Header from '../components/header/Header';
-import Loader from 'react-loader-spinner';
+
 import Communities from './../components/communities/Communities';
 import { GlobalState } from './../GlobalState';
 import SEO from './../SEO/SEO';
+import Loading from './../components/common/Loading';
 
 const Community = () => {
   const state = useContext(GlobalState);
@@ -20,7 +21,7 @@ const Community = () => {
   if (loading) {
     return (
       <div className='load'>
-        <Loader type='Circles' color='#00B87C' height={54} width={54} />
+        <Loading />
       </div>
     );
   }

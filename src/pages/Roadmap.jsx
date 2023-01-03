@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/header/Header';
 import Footer from './../components/footer/Footer';
-import Loader from 'react-loader-spinner';
 import RoadMap from '../components/roadMap/RoadMap';
 import SEO from './../SEO/SEO';
+import Loading from './../components/common/Loading';
 
 const Roadmap = () => {
   const [loading, setLoading] = useState(true);
@@ -17,7 +17,7 @@ const Roadmap = () => {
   if (loading) {
     return (
       <div className='load'>
-        <Loader type='Circles' color='#00B87C' height={54} width={54} />
+        <Loading />
       </div>
     );
   }

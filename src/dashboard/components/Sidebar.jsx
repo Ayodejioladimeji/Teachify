@@ -16,7 +16,7 @@ import {
 } from '@material-ui/icons';
 import { NavLink } from 'react-router-dom';
 import { GlobalState } from './../../GlobalState';
-import Loader from 'react-loader-spinner';
+import Loading from './../../components/common/Loading';
 
 const Sidebar = () => {
   const state = useContext(GlobalState);
@@ -362,7 +362,7 @@ const Sidebar = () => {
         <div className='sidebarMenu'>
           {loading && (
             <div className='load'>
-              <Loader type='Circles' color='#00B87C' height={44} width={44} />
+              <Loading />
             </div>
           )}
           <ul className='sidebarList'>

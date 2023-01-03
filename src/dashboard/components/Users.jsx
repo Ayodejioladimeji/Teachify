@@ -4,8 +4,10 @@ import Swal from 'sweetalert2';
 import '../styles/Users.css';
 import { Link } from 'react-router-dom';
 import { GlobalState } from './../../GlobalState';
-import Loader from 'react-loader-spinner';
 import Pagination from './../../paginate/Pagination';
+import Loading from './../../components/common/Loading';
+
+//
 
 const Users = () => {
   const [data, setData] = useState('');
@@ -137,7 +139,7 @@ const Users = () => {
           </table>
           {loading ? (
             <div className='load'>
-              <Loader type='Circles' color='#00B87C' height={34} width={34} />
+              <Loading />
             </div>
           ) : null}
         </div>

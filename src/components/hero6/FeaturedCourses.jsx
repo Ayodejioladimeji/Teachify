@@ -3,8 +3,9 @@ import './FeaturedCourse.css';
 import { Computer } from '@material-ui/icons';
 import { GlobalState } from '../../GlobalState';
 import Card from './../card/Card';
-import Loader from 'react-loader-spinner';
+import Loading from './../common/Loading';
 
+//
 const NewCourses = () => {
   const state = useContext(GlobalState);
   const [course] = state.course.course;
@@ -26,7 +27,7 @@ const NewCourses = () => {
   if (loading || featuredCourses.length === 0) {
     return (
       <div className='loadings'>
-        <Loader type='Circles' color='#00B87C' height={54} width={54} />
+        <Loading />
       </div>
     );
   }
@@ -52,7 +53,7 @@ const NewCourses = () => {
         <button onClick={showItems} className='btn btn-primary mb-3'>
           {load ? (
             <div className='d-flex'>
-              <Loader type='Oval' color='#fff' height={24} width={24} />
+              <Loading />
               &nbsp; Loading
             </div>
           ) : (

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/header/Header';
 import Footer from './../components/footer/Footer';
 import Details from './../components/details/Details';
-import Loader from 'react-loader-spinner';
 import SEO from './../SEO/SEO';
+import Loading from '../components/common/Loading';
 
 const Detail = () => {
   const [loading, setLoading] = useState(true);
@@ -15,11 +15,7 @@ const Detail = () => {
   });
 
   if (loading) {
-    return (
-      <div className='load'>
-        <Loader type='Circles' color='#00B87C' height={54} width={54} />
-      </div>
-    );
+    return <Loading />;
   }
   return (
     <div>

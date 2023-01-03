@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import './RoadDetails.css';
 import { roadmap } from '../../constants/Roadmap';
-import Loader from 'react-loader-spinner';
+import Loading from './../common/Loading';
+
+//
 
 const RoadMap = () => {
   const [data, setData] = useState([]);
@@ -25,7 +27,7 @@ const RoadMap = () => {
   if (loading) {
     return (
       <div className='loadingss'>
-        <Loader type='Circles' color='#00B87C' height={54} width={54} />
+        <Loading />
       </div>
     );
   }

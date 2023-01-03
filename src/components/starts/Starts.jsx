@@ -2,7 +2,9 @@ import React, { useContext } from 'react';
 import './Starts.css';
 import StartCard from './StartCard';
 import { GlobalState } from '../../GlobalState';
-import Loader from 'react-loader-spinner';
+import Loading from './../common/Loading';
+
+//
 
 const Starts = () => {
   const state = useContext(GlobalState);
@@ -16,7 +18,7 @@ const Starts = () => {
   if (loading || featuredCourses.length === 0) {
     return (
       <div className='loadings'>
-        <Loader type='Circles' color='#00B87C' height={54} width={54} />
+        <Loading />
       </div>
     );
   }

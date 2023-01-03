@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import Loader from 'react-loader-spinner';
 import '../styles/Profile.css';
 import { GlobalState } from './../../GlobalState';
+import Loading from './../../components/common/Loading';
 
 const Profile = () => {
   const state = useContext(GlobalState);
@@ -14,7 +14,7 @@ const Profile = () => {
   if (loading) {
     return (
       <div className='loadings'>
-        <Loader type='Circles' color='#00B87C' height={34} width={34} />
+        <Loading />
       </div>
     );
   }

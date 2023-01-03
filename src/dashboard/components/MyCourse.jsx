@@ -3,8 +3,8 @@ import axios from 'axios';
 import '../styles/enroledCourses.css';
 import { GlobalState } from './../../GlobalState';
 import { Link } from 'react-router-dom';
-import Loader from 'react-loader-spinner';
 import Pagination from './../../paginate/Pagination';
+import Loading from './../../components/common/Loading';
 
 const MyCourse = () => {
   const [data, setData] = useState('');
@@ -49,7 +49,7 @@ const MyCourse = () => {
   if (loading) {
     return (
       <div className='load'>
-        <Loader type='Circles' color='#00B87C' height={44} width={44} />
+        <Loading />
       </div>
     );
   }

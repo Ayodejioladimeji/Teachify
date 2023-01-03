@@ -4,8 +4,8 @@ import Swal from 'sweetalert2';
 import '../styles/enroledCourses.css';
 import { GlobalState } from './../../GlobalState';
 import { Link } from 'react-router-dom';
-import Loader from 'react-loader-spinner';
 import Pagination from './../../paginate/Pagination';
+import Loading from './../../components/common/Loading';
 
 const EnrolledCourses = () => {
   const [data, setData] = useState('');
@@ -134,7 +134,7 @@ const EnrolledCourses = () => {
         </table>
         {loading && (
           <div className='load'>
-            <Loader type='Circles' color='#00B87C' height={34} width={34} />
+            <Loading />
           </div>
         )}
       </div>

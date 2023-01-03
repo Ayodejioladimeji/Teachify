@@ -4,10 +4,10 @@ import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import '../styles/enroledCourses.css';
 import { GlobalState } from './../../GlobalState';
-import Loader from 'react-loader-spinner';
 import toast from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
 import Pagination from './../../paginate/Pagination';
+import Loading from './../../components/common/Loading';
 
 const EnrolledCourses = () => {
   const [data, setData] = useState('');
@@ -154,7 +154,7 @@ const EnrolledCourses = () => {
 
       {loading && (
         <div className='load'>
-          <Loader type='Circles' color='#00B87C' height={34} width={34} />
+          <Loading />
         </div>
       )}
 

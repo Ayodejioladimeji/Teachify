@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Loader from 'react-loader-spinner';
+
 import { useHistory } from 'react-router-dom';
 import './Onboard.css';
+import Loading from './../common/Loading';
 
 const Onboard = () => {
   const [loading, setLoading] = useState(false);
@@ -22,7 +23,7 @@ const Onboard = () => {
         <button onClick={push} className='btn btn-primary'>
           {loading ? (
             <div className='d-flex'>
-              <Loader type='Oval' color='#fff' height={24} width={24} />
+              <Loading />
               &nbsp; Loading
             </div>
           ) : (

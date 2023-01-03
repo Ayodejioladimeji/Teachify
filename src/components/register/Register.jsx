@@ -7,8 +7,8 @@ import toast from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
 import { showErrMsg } from '../../utils/Notification';
 import './Register.css';
-import Loader from 'react-loader-spinner';
 
+import Loading from './../common/Loading';
 import {
   isEmpty,
   isEmail,
@@ -310,16 +310,7 @@ const Register = () => {
                     className='btn py-2 '
                     // disabled={accept ? true : false}
                   >
-                    {buttonLoading ? (
-                      <Loader
-                        type='ThreeDots'
-                        color='#fff'
-                        height={40}
-                        width={40}
-                      />
-                    ) : (
-                      'Register'
-                    )}
+                    {buttonLoading ? <Loading /> : 'Register'}
                   </button>
                 </div>
               </form>

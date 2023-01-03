@@ -4,7 +4,9 @@ import { GlobalState } from './../../GlobalState';
 import Card from '../card/Card';
 import './Courses.css';
 import BreadCumb from '../breadcumb/BreadCumb';
-import Loader from 'react-loader-spinner';
+import Loading from './../common/Loading';
+
+//
 
 const Courses = () => {
   const [data, setData] = useState('');
@@ -116,7 +118,7 @@ const Courses = () => {
             <button onClick={showItems} className='btn btn-primary loadmore'>
               {load ? (
                 <div className='d-flex'>
-                  <Loader type='Oval' color='#fff' height={24} width={24} />
+                  <Loading />
                   &nbsp; Loading
                 </div>
               ) : (

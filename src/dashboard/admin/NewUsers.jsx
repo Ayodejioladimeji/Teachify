@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { GlobalState } from './../../GlobalState';
-import Loader from 'react-loader-spinner';
 import '../styles/newUsers.css';
+import Loading from './../../components/common/Loading';
 
 const NewUsers = () => {
   const state = useContext(GlobalState);
@@ -46,7 +46,7 @@ const NewUsers = () => {
         </table>
         {loading ? (
           <div className='load'>
-            <Loader type='Oval' color='#00B87C' height={34} width={34} />
+            <Loading />
           </div>
         ) : null}
       </div>

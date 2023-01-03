@@ -11,9 +11,9 @@ import './SocialDisplay.css';
 import SocialComment from './SocialComment';
 import { GlobalState } from './../../GlobalState';
 import { format } from 'timeago.js';
-import Loader from 'react-loader-spinner';
 import { toast } from 'react-hot-toast';
 import Swal from 'sweetalert2';
+import Loading from './../common/Loading';
 
 const SocialDisplay = ({ socket }) => {
   const state = useContext(GlobalState);
@@ -161,11 +161,7 @@ const SocialDisplay = ({ socket }) => {
   if (data.length === 0) return null;
 
   if (loading) {
-    return (
-      <div className='loadingss'>
-        <Loader type='Circles' color='#00B87C' height={54} width={54} />
-      </div>
-    );
+    return <Loading />;
   }
 
   const handleClick = (id) => {

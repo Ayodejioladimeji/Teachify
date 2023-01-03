@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Loader from 'react-loader-spinner';
+
 import Header from '../components/header/Header';
 import { Step } from './../components/instructorBoard/Step';
 import SEO from './../SEO/SEO';
+import Loading from './../components/common/Loading';
 
 const InstructorOnBoard = () => {
   const [loading, setLoading] = useState(true);
@@ -16,7 +17,7 @@ const InstructorOnBoard = () => {
   if (loading) {
     return (
       <div className='load'>
-        <Loader type='Circles' color='#00B87C' height={54} width={54} />
+        <Loading type='Circles' color='#00B87C' height={54} width={54} />
       </div>
     );
   }

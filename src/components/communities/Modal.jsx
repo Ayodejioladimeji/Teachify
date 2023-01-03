@@ -6,8 +6,8 @@ import './Modal.css';
 import { Image, Mood } from '@material-ui/icons';
 import { GlobalState } from './../../GlobalState';
 import { toast, Toaster } from 'react-hot-toast';
-import Loader from 'react-loader-spinner';
 import { isEmpty } from './../../utils/Validation';
+import Loading from './../common/Loading';
 
 const initialState = {
   content: '',
@@ -178,12 +178,7 @@ const Modal = ({ setOpenModal }) => {
                     {loading ? (
                       <div id='file_img'>
                         <div className='load'>
-                          <Loader
-                            type='Oval'
-                            color='blue'
-                            height={44}
-                            width={44}
-                          />
+                          <Loading />
                         </div>
                       </div>
                     ) : (

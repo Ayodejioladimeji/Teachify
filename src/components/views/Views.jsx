@@ -4,12 +4,12 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { GlobalState } from './../../GlobalState';
 import './Views.css';
-import Loader from 'react-loader-spinner';
 import Player from './Player';
 // import Feed from '../details/Feed';
 import { isEmpty } from './../../utils/Validation';
 import { showErrMsg } from './../../utils/Notification';
 import Feedback from './../details/Feedback';
+import Loading from './../common/Loading';
 
 const initialState = {
   rating: '',
@@ -101,7 +101,7 @@ const Views = () => {
   if (loading) {
     return (
       <div className='loadingss'>
-        <Loader type='Circles' color='#00B87C' height={54} width={54} />
+        <Loading />
       </div>
     );
   }

@@ -4,7 +4,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import './InstructorProfile.css';
 import Card from './../card/Card';
 import { GlobalState } from './../../GlobalState';
-import Loader from 'react-loader-spinner';
+import Loading from './../common/Loading';
 
 const InstructorProfile = () => {
   const state = useContext(GlobalState);
@@ -32,7 +32,7 @@ const InstructorProfile = () => {
   if (loading) {
     return (
       <div className='loadings' style={{ height: '100vh' }}>
-        <Loader type='Circles' color='#00B87C' height={54} width={54} />
+        <Loading />
       </div>
     );
   }

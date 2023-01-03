@@ -8,11 +8,11 @@ import { YouLearn } from './YouLearn';
 import Description from './Description';
 import Feedback from './Feedback';
 import female from '../../assets/female.png';
-import Loader from 'react-loader-spinner';
 import Rating from './../views/Rating';
 import { format } from 'timeago.js';
 import Author from './Author';
 import { Toaster } from 'react-hot-toast';
+import Loading from './../common/Loading';
 
 const Details = () => {
   const state = useContext(GlobalState);
@@ -74,11 +74,7 @@ const Details = () => {
   if (detailCourse.length === 0) return null;
 
   if (loading) {
-    return (
-      <div className='loadingss'>
-        <Loader type='Circles' color='#00B87C' height={54} width={54} />
-      </div>
-    );
+    return <Loading />;
   }
 
   return (

@@ -3,8 +3,8 @@ import React, { useState, useContext } from 'react';
 import '../styles/Users.css';
 import { Link } from 'react-router-dom';
 import { GlobalState } from './../../GlobalState';
-import Loader from 'react-loader-spinner';
 import Pagination from './../../paginate/Pagination';
+import Loading from './../../components/common/Loading';
 
 const Instructor = () => {
   const [data, setData] = useState('');
@@ -95,7 +95,7 @@ const Instructor = () => {
           </table>
           {loading ? (
             <div className='load'>
-              <Loader type='Circles' color='#00B87C' height={34} width={34} />
+              <Loading />
             </div>
           ) : null}
         </div>

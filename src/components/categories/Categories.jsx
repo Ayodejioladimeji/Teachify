@@ -4,7 +4,7 @@ import { GlobalState } from './../../GlobalState';
 import Card from '../card/Card';
 import './Categories.css';
 import BreadCumb from '../breadcumb/BreadCumb';
-import Loader from 'react-loader-spinner';
+import Loading from './../common/Loading';
 
 const Categories = () => {
   const [data, setData] = useState('');
@@ -45,11 +45,7 @@ const Categories = () => {
   });
 
   if (loading) {
-    return (
-      <div className='loadings'>
-        <Loader type='Circles' color='#00B87C' height={54} width={54} />
-      </div>
-    );
+    return <Loading />;
   }
 
   if (bread.length === 0) return null;

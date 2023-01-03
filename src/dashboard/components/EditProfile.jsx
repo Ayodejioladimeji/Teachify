@@ -1,10 +1,10 @@
 import React, { useState, useContext, useRef } from 'react';
 import axios from 'axios';
-import Loader from 'react-loader-spinner';
 // import toast from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
 import '../styles/Profile.css';
 import { GlobalState } from './../../GlobalState';
+import Loading from './../../components/common/Loading';
 
 const initialState = {
   fullname: '',
@@ -122,12 +122,7 @@ const EditProfile = () => {
             <div className='load'>
               {loading && (
                 <div className='load'>
-                  <Loader
-                    type='Circles'
-                    color='#00B87C'
-                    height={34}
-                    width={34}
-                  />
+                  <Loading />
                 </div>
               )}
             </div>

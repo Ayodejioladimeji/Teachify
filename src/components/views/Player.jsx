@@ -5,7 +5,9 @@ import ReactPlayer from 'react-player';
 import { makeStyles } from '@material-ui/core/styles';
 // import screenful from 'screenfull';
 import Controls from './Controls';
-import Loader from 'react-loader-spinner';
+import Loading from './../common/Loading';
+
+//
 
 const useStyles = makeStyles((theme) => ({
   playerWrapper: {
@@ -225,7 +227,7 @@ const Player = ({ link, title }) => {
   if (loading) {
     return (
       <div className='loadingss'>
-        <Loader type='Circles' color='#00B87C' height={54} width={54} />
+        <Loading />
       </div>
     );
   }

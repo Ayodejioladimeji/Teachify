@@ -4,7 +4,7 @@ import { Toaster } from 'react-hot-toast';
 
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
-import Loader from 'react-loader-spinner';
+import Loading from './../../../components/common/Loading';
 
 export const Stepthree = ({
   formData,
@@ -55,7 +55,7 @@ export const Stepthree = ({
           {loading ? (
             <div id='file_img'>
               <div className='load'>
-                <Loader type='Bars' color='#f16051' height={54} width={54} />
+                <Loading />
               </div>
             </div>
           ) : (

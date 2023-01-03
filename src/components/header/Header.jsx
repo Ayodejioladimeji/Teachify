@@ -20,11 +20,13 @@ import { Toaster } from 'react-hot-toast';
 import toast from 'react-hot-toast';
 import { NotificationsNone } from '@material-ui/icons';
 import { MailOutline } from '@material-ui/icons';
+import Loading from './../common/Loading';
 
 const Navbar = () => {
   const state = useContext(GlobalState);
   const socket = state.userApi.socket;
   const [isLogged] = state.userApi.isLogged;
+  const [loading] = state.userApi.loading;
   const [user] = state.userApi.user;
   const [cart] = state.userApi.cart;
   const [categories] = state.categories.categories;
@@ -306,19 +308,25 @@ const Navbar = () => {
             </li>
           </ul>
 
-          {isLogged ? (
-            userLink()
+          {loading ? (
+            <Loading />
           ) : (
-            <div className='login-box'>
-              <Link to='/login'>
-                <Input className='login-box-icon' />
-                Login
-              </Link>
-              <Link to='/register'>
-                <PersonAdd className='login-box-icon' />
-                Signup
-              </Link>
-            </div>
+            <>
+              {isLogged
+                ? userLink()
+                : !loading && (
+                    <div className='login-box'>
+                      <Link to='/login'>
+                        <Input className='login-box-icon' />
+                        Login
+                      </Link>
+                      <Link to='/register'>
+                        <PersonAdd className='login-box-icon' />
+                        Signup
+                      </Link>
+                    </div>
+                  )}
+            </>
           )}
         </div>
       </div>

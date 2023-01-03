@@ -243,7 +243,7 @@ const Player = ({ link, title }) => {
             ref={playerRef}
             width='100%'
             height='100%'
-            url={`${link}?showinfo=0&enablejsapi=1&origin=http://localhost:3000`}
+            url={`${link}?showinfo=0&enablejsapi=1&origin=https://teachify.netlify.app`}
             pip={pip}
             playing={playing}
             controls={false}

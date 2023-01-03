@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { GoogleLogin } from 'react-google-login';
 import { Link } from 'react-router-dom';
@@ -17,7 +17,6 @@ import {
   isNameLength,
   isTerms,
 } from '../../utils/Validation';
-import Recaptcha from 'react-recaptcha';
 
 const initialState = {
   fullname: '',
@@ -35,7 +34,6 @@ const Register = () => {
   const [typePass, setTypePass] = useState(false);
   const [typePas, setTypePas] = useState(false);
   const [buttonLoading, setButtonLoading] = useState(false);
-  const [verified, setVerified] = useState(false);
   const { CLIENT_ID } = process.env;
 
   const {
@@ -102,44 +100,42 @@ const Register = () => {
     if (!isMatch(password, cfpassword))
       return setValues({ ...values, err: 'password does not match' });
 
-    if (verified) {
-      try {
-        const res = await axios.post('/user/register', {
+    try {
+      const res = await axios.post('/user/register', {
+        ...values,
+      });
+
+      setValues(
+        {
           ...values,
-        });
+        },
+        setButtonLoading(true),
+        toast.success(res.data.msg)
+      );
 
-        setValues(
-          {
-            ...values,
-          },
-          setButtonLoading(true),
-          toast.success(res.data.msg)
-        );
-
-        setTimeout(() => {
-          window.location.href = '/verification';
-        }, 3500);
-      } catch (err) {
-        toast.error(err.response.data.msg);
-      }
+      setTimeout(() => {
+        window.location.href = '/verification';
+      }, 3500);
+    } catch (err) {
+      toast.error(err.response.data.msg);
     }
   };
 
-  useEffect(() => {
-    recaptchaLoaded();
-  }, []);
+  // useEffect(() => {
+  //   recaptchaLoaded();
+  // }, []);
 
-  //  THE SECTION OF THE CAPTCHA
-  const recaptchaLoaded = () => {
-    console.log('loaded successfully');
-  };
+  // //  THE SECTION OF THE CAPTCHA
+  // const recaptchaLoaded = () => {
+  //   console.log('loaded successfully');
+  // };
 
-  const verifyCallback = (response) => {
-    if (response) {
-      console.log(response);
-      setVerified(true);
-    }
-  };
+  // const verifyCallback = (response) => {
+  //   if (response) {
+  //     console.log(response);
+  //     setVerified(true);
+  //   }
+  // };
 
   // The section of the google login
   const responseGoogle = async (response) => {
@@ -228,7 +224,7 @@ const Register = () => {
                   />
                 </div>
 
-                <div className='col-md-6'>
+                <div className='col-md-12'>
                   <label htmlFor='gender' className='form-label'>
                     Gender
                   </label>
@@ -300,12 +296,12 @@ const Register = () => {
                 </div>
 
                 {/* <div className='col-md-12 bg-primary'> */}
-                <Recaptcha
+                {/* <Recaptcha
                   sitekey='6LfZS64dAAAAANtYnrf4M3hZDru2id2SO1LXA3r1'
                   render='explicit'
                   onloadCallback={recaptchaLoaded}
                   verifyCallback={verifyCallback}
-                />
+                /> */}
                 {/* </div> */}
 
                 <div className='col-md-12 button-div'>

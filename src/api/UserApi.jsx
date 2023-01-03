@@ -9,15 +9,18 @@ const UserApi = (token) => {
   const [instructor, setInstructor] = useState(false);
   const [data, setData] = useState([]);
   const [values, setValues] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [callback, setCallback] = useState(false);
   const [cart, setCart] = useState([]);
   const [socket, setSocket] = useState(null);
+
+  //
 
   useEffect(() => {
     if (token) {
       const getUser = async () => {
         try {
+          setLoading(true);
           const res = await axios.get('/user/user', {
             headers: { Authorization: token },
           });
@@ -33,6 +36,7 @@ const UserApi = (token) => {
           setLoading(false);
         } catch (err) {
           console.log(err);
+          setLoading(false);
         }
       };
       getUser();
@@ -99,8 +103,8 @@ const UserApi = (token) => {
 
   // THE SECTION OF THE SOCKET
   useEffect(() => {
-    setSocket(io('http://localhost:3000'));
-    // setSocket(io('https://teachify.netlify.app'));
+    // setSocket(io('http://localhost:3000'));
+    setSocket(io('https://teachify.netlify.app'));
   }, []);
 
   useEffect(() => {

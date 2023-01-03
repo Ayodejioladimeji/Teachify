@@ -13,10 +13,15 @@ export const DataProvider = ({ children }) => {
   const [token, setToken] = useState(false);
   const loginCheck = localStorage.getItem('firstLogin');
   const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   // OPEN THE SIDEBAR SECTION
   const openSidebar = () => {
     setIsOpen(!isOpen);
+  };
+
+  const openSidebars = () => {
+    setOpen(!open);
   };
 
   // CLOSE THE SIDEBAR SECTION
@@ -52,6 +57,7 @@ export const DataProvider = ({ children }) => {
     loginCheck,
     isOpen: [isOpen, setIsOpen],
     openSidebar,
+    openSidebars,
     closeSidebar,
     categories: CategoriesAPI(),
     courses: CoursesAPI(),

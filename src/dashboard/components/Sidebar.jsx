@@ -330,30 +330,6 @@ const Sidebar = () => {
           </NavLink>
         </li>
 
-        {/* <li>
-          <NavLink
-            onClick={openSidebar}
-            to='/dashboard/certificate'
-            className='sidebarListItem'
-            activeClassName='active'
-          >
-            <Redeem className='sidebarIcon' />
-            Certificate Earned
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink
-            onClick={openSidebar}
-            to='/dashboard/video_chat'
-            className='sidebarListItem'
-            activeClassName='active'
-          >
-            <VideoCallRounded className='sidebarIcon' />
-            Video Chat
-          </NavLink>
-        </li> */}
-
         <li>
           <NavLink
             onClick={openSidebar}
@@ -380,6 +356,7 @@ const Sidebar = () => {
     <div
       onClick={openSidebar}
       className={`${isOpen ? 'sidebar hide-sidebar' : 'sidebar'}`}
+      // className="sidebar"
     >
       <div className='sidebarWrapper'>
         <div className='sidebarMenu'>
@@ -391,7 +368,7 @@ const Sidebar = () => {
           <ul className='sidebarList'>
             {user.role === 'instructor' && InstructorRouter()}
             {user.role === 'admin' && AdminRouter()}
-            {user.role === 'Student' && StudentRouter()}
+            {user.role === 'student' && StudentRouter()}
           </ul>
         </div>
       </div>

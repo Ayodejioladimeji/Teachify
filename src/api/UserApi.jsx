@@ -104,7 +104,7 @@ const UserApi = (token) => {
   // THE SECTION OF THE SOCKET
   useEffect(() => {
     // setSocket(io('http://localhost:3000'));
-    setSocket(io('https://teachify.netlify.app'));
+    setSocket(io('https://teachify-learning.netlify.app'));
   }, []);
 
   useEffect(() => {

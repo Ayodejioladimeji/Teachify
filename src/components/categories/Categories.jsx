@@ -95,7 +95,7 @@ const Categories = () => {
           <button onClick={showItems} className='btn btn-primary loadmore'>
             {load ? (
               <div className='d-flex'>
-                <Loader type='Oval' color='#fff' height={24} width={24} />
+                <Loading />
                 &nbsp; Loading
               </div>
             ) : (

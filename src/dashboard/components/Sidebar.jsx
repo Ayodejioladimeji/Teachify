@@ -374,6 +374,8 @@ const Sidebar = () => {
     );
   };
 
+  console.log(user.role);
+
   return (
     <div
       onClick={openSidebar}

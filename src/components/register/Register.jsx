@@ -22,7 +22,6 @@ import Recaptcha from 'react-recaptcha';
 const initialState = {
   fullname: '',
   username: '',
-  role: '',
   email: '',
   gender: '',
   password: '',
@@ -43,7 +42,6 @@ const Register = () => {
     fullname,
     email,
     username,
-    role,
     terms,
     gender,
     password,
@@ -78,7 +76,6 @@ const Register = () => {
       isEmpty(fullname) ||
       isEmpty(username) ||
       isEmpty(email) ||
-      isEmpty(role) ||
       isEmpty(gender) ||
       isEmpty(password) ||
       isEmpty(cfpassword)
@@ -246,23 +243,6 @@ const Register = () => {
                     <option>Male</option>
                     <option>Female</option>
                     <option>Others</option>
-                  </select>
-                </div>
-
-                <div className='col-md-6'>
-                  <label htmlFor='role' className='form-label'>
-                    Choose role
-                  </label>
-                  <select
-                    id='role'
-                    className='form-select'
-                    name='role'
-                    value={role}
-                    onChange={handleChange}
-                  >
-                    <option defaultValue>what is your role?</option>
-                    <option>Student</option>
-                    <option>Instructor</option>
                   </select>
                 </div>
 

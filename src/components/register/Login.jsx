@@ -111,6 +111,12 @@ const Login = () => {
               />
             </div>
 
+            <div className='login-details'>
+              <h5>User Login Details</h5>
+              <small>Email : brightlayo11@gmail.com</small>
+              <small>Password : brightlayo</small>
+            </div>
+
             <div className='col-md-12 py-3'>
               <form
                 onSubmit={handleLogin}

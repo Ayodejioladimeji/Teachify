@@ -15,6 +15,22 @@
   padding: 150px 0;
 }
 
+.login-details {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: var(--light);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.login-details h5 {
+  font-size: 15px;
+}
+
+.login-details small {
+  display: block;
+}
+
 .login-center .list-group-item.active {
   background: var(--light) !important;
   outline: none !important;
@@ -71,6 +87,7 @@
   width: 18px;
   margin-right: 5px;
   border-radius: 15px;
+  appearance: none;
   -webkit-appearance: none;
   margin-left: 1px !important;
 }

@@ -187,7 +187,7 @@ export const MultiStepForm = () => {
       toast.success(onEdit ? 'Course Updated' : 'Course Created');
       setTimeout(() => {
         window.location.href =
-          'https://glitters-teachify.herokuapp.com/dashboard/my_courses';
+          'https://teachify.netlify.app/dashboard/my_courses';
       }, 1500);
     } catch (err) {
       console.log(err);

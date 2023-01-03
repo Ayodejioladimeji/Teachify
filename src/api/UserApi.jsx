@@ -99,8 +99,8 @@ const UserApi = (token) => {
 
   // THE SECTION OF THE SOCKET
   useEffect(() => {
-    // setSocket(io('http://localhost:3000'));
-    setSocket(io('https://glitters-teachify.herokuapp.com'));
+    setSocket(io('http://localhost:3000'));
+    // setSocket(io('https://teachify.netlify.app'));
   }, []);
 
   useEffect(() => {

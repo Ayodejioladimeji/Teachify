@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from 'react';
-import axios from 'axios';
 import {
   MenuOpen,
   PersonAdd,
@@ -21,7 +20,6 @@ import toast from 'react-hot-toast';
 import { NotificationsNone } from '@material-ui/icons';
 import { MailOutline } from '@material-ui/icons';
 import Loading from './../common/Loading';
-const endpoint = process.env.REACT_APP_API;
 
 //
 
@@ -41,7 +39,6 @@ const Navbar = () => {
   // THE SECTION OF THE LOGOUT FUNCTION
   const logoutUser = async () => {
     localStorage.clear();
-
     window.location.href = '/';
     toast.success('you just logged out');
   };

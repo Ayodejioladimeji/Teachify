@@ -25,7 +25,7 @@ const UserApi = () => {
       const getUser = async () => {
         try {
           setLoading(true);
-          const res = await axios.get('http://localhost:8000/user/user', {
+          const res = await axios.get(endpoint + '/user/user', {
             headers: { Authorization: token },
           });
           // sessionStorage.setItem('user', JSON.stringify(res.data));
@@ -107,8 +107,8 @@ const UserApi = () => {
 
   // THE SECTION OF THE SOCKET
   useEffect(() => {
-    setSocket(io('http://localhost:3000'));
-    // setSocket(io('https://teachify-learning.netlify.app'));
+    // setSocket(io('http://localhost:3000'));
+    setSocket(io('https://teachify-learning.netlify.app'));
   }, []);
 
   useEffect(() => {

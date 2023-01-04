@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { showErrMsg, showSuccessMsg } from '../../utils/Notification';
-
 import rejected from './rejected.jpg';
 import download from './verified.jpg';
-
 import './activationEmail.css';
+const endpoint = process.env.REACT_APP_API;
+
+//
 
 const ActivationEmail = () => {
   const { activation_token } = useParams();
@@ -18,7 +19,7 @@ const ActivationEmail = () => {
     if (activation_token) {
       const activationEmail = async () => {
         try {
-          const res = await axios.post('/user/activation', {
+          const res = await axios.post(endpoint + '/user/activation', {
             activation_token,
           });
           setSuccess(res.data.msg);

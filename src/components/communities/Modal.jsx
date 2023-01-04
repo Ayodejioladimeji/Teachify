@@ -9,6 +9,8 @@ import { toast, Toaster } from 'react-hot-toast';
 import { isEmpty } from './../../utils/Validation';
 import Loading from './../common/Loading';
 
+const endpoint = process.env.REACT_APP_API;
+
 const initialState = {
   content: '',
 };
@@ -16,13 +18,13 @@ const initialState = {
 const Modal = ({ setOpenModal }) => {
   const [post, setPost] = useState(initialState);
   const state = useContext(GlobalState);
-  const [token] = state.token;
   const [callback, setCallback] = state.post.callback;
   const [images, setImages] = useState(false);
   const [loading, setLoading] = useState(false);
   const [loadin, setLoadin] = useState(false);
   const history = useHistory();
   const [showBox, setShowBox] = useState(false);
+  const token = localStorage.getItem('token');
 
   const { content } = post;
 
@@ -59,7 +61,7 @@ const Modal = ({ setOpenModal }) => {
       let formData = new FormData();
       formData.append('file', file);
       setLoading(true);
-      const res = await axios.post('/api/upload', formData, {
+      const res = await axios.post(endpoint + '/api/upload', formData, {
         headers: {
           'content-type': 'multipart/form-data',
           Authorization: token,
@@ -78,7 +80,7 @@ const Modal = ({ setOpenModal }) => {
     try {
       setLoading(true);
       await axios.post(
-        '/api/destroy',
+        endpoint + '/api/destroy',
         { public_id: images['public_id'] },
         {
           headers: { Authorization: token },
@@ -103,7 +105,7 @@ const Modal = ({ setOpenModal }) => {
       // if (!images) return toast.error('No Image Upload');
 
       await axios.post(
-        '/api/post',
+        endpoint + '/api/post',
         { ...post, images },
         {
           headers: { Authorization: token },

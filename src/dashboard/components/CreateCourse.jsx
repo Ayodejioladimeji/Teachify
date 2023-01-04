@@ -8,6 +8,7 @@ import toast from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
 // import { Loader } from 'react-loader-spinner';
 import { isEmpty } from '../../utils/Validation';
+const endpoint = process.env.REACT_APP_API;
 
 const initialState = {
   // course_id: '',
@@ -26,6 +27,7 @@ const CreateCourse = () => {
   const state = useContext(GlobalState);
   const [course, setCourse] = useState(initialState);
   const [categories] = state.categories.categories;
+  const token = localStorage.getItem('token');
   const [images, setImages] = useState(false);
   // const [loading, setLoading] = useState(false);
   const {
@@ -41,7 +43,6 @@ const CreateCourse = () => {
   } = course;
 
   const [isAdmin] = state.userApi.admin;
-  const [token] = state.token;
 
   const history = useHistory();
   const param = useParams();
@@ -94,7 +95,7 @@ const CreateCourse = () => {
       let formData = new FormData();
       formData.append('file', file);
 
-      const res = await axios.post('/api/upload', formData, {
+      const res = await axios.post(endpoint + '/api/upload', formData, {
         headers: {
           'content-type': 'multipart/form-data',
           Authorization: token,
@@ -112,7 +113,7 @@ const CreateCourse = () => {
     try {
       // setLoading(true);
       await axios.post(
-        '/api/destroy',
+        endpoint + '/api/destroy',
         { public_id: images['public_id'] },
         {
           headers: { Authorization: token },
@@ -150,7 +151,7 @@ const CreateCourse = () => {
 
       if (onEdit) {
         await axios.put(
-          `/api/courses/${course._id}`,
+          endpoint + `/api/courses/${course._id}`,
           { ...course, images },
           {
             headers: { Authorization: token },
@@ -159,7 +160,7 @@ const CreateCourse = () => {
         history.push('/dashboard/all_courses');
       } else {
         await axios.post(
-          '/api/courses',
+          endpoint + '/api/courses',
           { ...course, images },
           {
             headers: { Authorization: token },

@@ -5,12 +5,15 @@ import { GlobalState } from './../../GlobalState';
 import { Link } from 'react-router-dom';
 import Pagination from './../../paginate/Pagination';
 import Loading from './../../components/common/Loading';
+const endpoint = process.env.REACT_APP_API;
+
+//
 
 const MyCourse = () => {
   const [data, setData] = useState('');
+  const token = localStorage.getItem('token');
   const state = useContext(GlobalState);
   const [course, setCourse] = useState([]);
-  const [token] = state.token;
   const [loading, setLoading] = useState(true);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,7 +21,7 @@ const MyCourse = () => {
 
   useEffect(() => {
     const getCourse = async () => {
-      const res = await axios.get('/api/courses/my_course', {
+      const res = await axios.get(endpoint + '/api/courses/my_course', {
         headers: { Authorization: token },
       });
       setCourse(res.data);

@@ -21,12 +21,16 @@ import toast from 'react-hot-toast';
 import { NotificationsNone } from '@material-ui/icons';
 import { MailOutline } from '@material-ui/icons';
 import Loading from './../common/Loading';
+const endpoint = process.env.REACT_APP_API;
+
+//
 
 const Navbar = () => {
   const state = useContext(GlobalState);
   const socket = state.userApi.socket;
   const [isLogged] = state.userApi.isLogged;
   const [loading] = state.userApi.loading;
+  // const [categoryloading] = state.categoriesAPI;
   const [user] = state.userApi.user;
   const [cart] = state.userApi.cart;
   const [categories] = state.categories.categories;
@@ -36,10 +40,7 @@ const Navbar = () => {
 
   // THE SECTION OF THE LOGOUT FUNCTION
   const logoutUser = async () => {
-    await axios.get('/user/logout');
-
-    localStorage.removeItem('firstLogin');
-    sessionStorage.removeItem('user');
+    localStorage.clear();
 
     window.location.href = '/';
     toast.success('you just logged out');

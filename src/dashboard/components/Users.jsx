@@ -6,13 +6,14 @@ import { Link } from 'react-router-dom';
 import { GlobalState } from './../../GlobalState';
 import Pagination from './../../paginate/Pagination';
 import Loading from './../../components/common/Loading';
+const endpoint = process.env.REACT_APP_API;
 
 //
 
 const Users = () => {
   const [data, setData] = useState('');
   const state = useContext(GlobalState);
-  const [token] = state.token;
+  const token = localStorage.getItem('token');
   // const [user] = state.userApi.user;
   const [callback, setCallback] = state.userApi.callback;
   const values = state.userApi.values[0];
@@ -47,7 +48,7 @@ const Users = () => {
       confirmButtonText: 'Yes, delete!',
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const deleteUser = axios.delete(`/user/delete/${id}`, {
+        const deleteUser = axios.delete(endpoint + `/user/delete/${id}`, {
           headers: { Authorization: token },
         });
 

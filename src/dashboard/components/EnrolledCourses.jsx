@@ -6,13 +6,16 @@ import { GlobalState } from './../../GlobalState';
 import { Link } from 'react-router-dom';
 import Pagination from './../../paginate/Pagination';
 import Loading from './../../components/common/Loading';
+const endpoint = process.env.REACT_APP_API;
+
+//
 
 const EnrolledCourses = () => {
   const [data, setData] = useState('');
   const state = useContext(GlobalState);
   const [cart, setCart] = state.userApi.cart;
-  const [token] = state.token;
   const [loading] = state.userApi.loading;
+  const token = localStorage.getItem('token');
 
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
@@ -25,7 +28,7 @@ const EnrolledCourses = () => {
   // ======================================
   const addToCart = async (cart) => {
     await axios.patch(
-      '/user/addcart',
+      endpoint + '/user/addcart',
       { cart },
       {
         headers: { Authorization: token },

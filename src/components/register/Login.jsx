@@ -9,6 +9,7 @@ import { showErrMsg } from '../../utils/Notification';
 import './Login.css';
 
 import { isEmpty, isEmail, isLength } from '../../utils/Validation';
+const endpoint = process.env.REACT_APP_API;
 
 const initialState = {
   email: '',
@@ -49,7 +50,7 @@ const Login = () => {
       });
 
     try {
-      const res = await axios.post('/user/login', {
+      const res = await axios.post(endpoint + '/user/login', {
         ...values,
       });
 
@@ -62,6 +63,7 @@ const Login = () => {
       );
 
       localStorage.setItem('firstLogin', true);
+      localStorage.setItem('token', res.data.access_token);
 
       setTimeout(() => {
         window.location.href = '/';
@@ -74,7 +76,7 @@ const Login = () => {
   // The section of the google login
   const responseGoogle = async (response) => {
     try {
-      const res = await axios.post('/user/google_login', {
+      const res = await axios.post(endpoint + '/user/google_login', {
         tokenId: response.tokenId,
       });
 

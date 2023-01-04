@@ -5,13 +5,13 @@ import './UserProfile.css';
 // import Card from './../card/Card';
 import { GlobalState } from './../../GlobalState';
 import Loading from './../common/Loading';
-
+const endpoint = process.env.REACT_APP_API;
 //
 
 const UserProfile = () => {
   const state = useContext(GlobalState);
-  const [token] = state.token;
   const [user] = state.userApi.user;
+  const token = localStorage.getItem('token');
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
@@ -19,7 +19,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     const getUser = async () => {
-      const res = await axios.get(`/user/social/profile/${id}`, {
+      const res = await axios.get(endpoint + `/user/social/profile/${id}`, {
         headers: { Authorization: token },
       });
       setData(res.data);

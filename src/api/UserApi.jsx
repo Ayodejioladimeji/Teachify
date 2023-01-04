@@ -2,8 +2,11 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { io } from 'socket.io-client';
 import { toast } from 'react-hot-toast';
+const endpoint = process.env.REACT_APP_API;
 
-const UserApi = (token) => {
+//
+
+const UserApi = () => {
   const [isLogged, setIsLogged] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [instructor, setInstructor] = useState(false);
@@ -12,6 +15,7 @@ const UserApi = (token) => {
   const [loading, setLoading] = useState(false);
   const [callback, setCallback] = useState(false);
   const [cart, setCart] = useState([]);
+  const token = localStorage.getItem('token');
   const [socket, setSocket] = useState(null);
 
   //
@@ -21,7 +25,7 @@ const UserApi = (token) => {
       const getUser = async () => {
         try {
           setLoading(true);
-          const res = await axios.get('/user/user', {
+          const res = await axios.get('http://localhost:8000/user/user', {
             headers: { Authorization: token },
           });
           // sessionStorage.setItem('user', JSON.stringify(res.data));
@@ -48,7 +52,7 @@ const UserApi = (token) => {
     if (token) {
       const getAll = async () => {
         try {
-          const res = await axios.get('/user/all_users', {
+          const res = await axios.get(endpoint + '/user/all_users', {
             headers: {
               Authorization: token,
             },
@@ -82,7 +86,7 @@ const UserApi = (token) => {
       ]);
 
       await axios.patch(
-        '/user/addcart',
+        endpoint + '/user/addcart',
         {
           cart: [
             ...cart,
@@ -103,8 +107,8 @@ const UserApi = (token) => {
 
   // THE SECTION OF THE SOCKET
   useEffect(() => {
-    // setSocket(io('http://localhost:3000'));
-    setSocket(io('https://teachify-learning.netlify.app'));
+    setSocket(io('http://localhost:3000'));
+    // setSocket(io('https://teachify-learning.netlify.app'));
   }, []);
 
   useEffect(() => {

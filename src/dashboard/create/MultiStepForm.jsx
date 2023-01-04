@@ -11,6 +11,7 @@ import { Steptwo } from './step/Steptwo';
 import { Stepthree } from './step/Stepthree';
 import { Stepfour } from './step/Stepfour';
 import './step/Step.css';
+const endpoint = process.env.REACT_APP_API;
 
 const defaultData = {
   // course_id: '',
@@ -36,6 +37,7 @@ const steps = [
 export const MultiStepForm = () => {
   const state = useContext(GlobalState);
   const [course, setCourse] = useState(defaultData);
+  const token = localStorage.getItem('token');
   const [categories] = state.categories.categories;
   const [images, setImages] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -58,7 +60,6 @@ export const MultiStepForm = () => {
     comments,
   } = course;
 
-  const [token] = state.token;
   const history = useHistory();
   const param = useParams();
   const [courses] = state.courses.courses;
@@ -110,7 +111,7 @@ export const MultiStepForm = () => {
       formData.append('file', file);
 
       setLoading(true);
-      const res = await axios.post('/api/upload', formData, {
+      const res = await axios.post(endpoint + '/api/upload', formData, {
         headers: {
           'content-type': 'multipart/form-data',
           Authorization: token,
@@ -129,7 +130,7 @@ export const MultiStepForm = () => {
     try {
       setLoading(true);
       await axios.post(
-        '/api/destroy',
+        endpoint + '/api/destroy',
         { public_id: images['public_id'] },
         {
           headers: { Authorization: token },
@@ -165,7 +166,7 @@ export const MultiStepForm = () => {
 
       if (onEdit) {
         await axios.put(
-          `/api/courses/${course._id}`,
+          endpoint + `/api/courses/${course._id}`,
           { ...course, images },
           {
             headers: { Authorization: token },
@@ -175,7 +176,7 @@ export const MultiStepForm = () => {
         history.push('/dashboard/my_courses');
       } else {
         await axios.post(
-          '/api/courses',
+          endpoint + '/api/courses',
           { ...course, images },
           {
             headers: { Authorization: token },

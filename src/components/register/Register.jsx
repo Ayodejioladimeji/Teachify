@@ -17,6 +17,7 @@ import {
   isNameLength,
   isTerms,
 } from '../../utils/Validation';
+const endpoint = process.env.REACT_APP_API;
 
 const initialState = {
   fullname: '',
@@ -101,7 +102,7 @@ const Register = () => {
       return setValues({ ...values, err: 'password does not match' });
 
     try {
-      const res = await axios.post('/user/register', {
+      const res = await axios.post(endpoint + '/user/register', {
         ...values,
       });
 
@@ -140,7 +141,7 @@ const Register = () => {
   // The section of the google login
   const responseGoogle = async (response) => {
     try {
-      const res = await axios.post('/user/google_login', {
+      const res = await axios.post(endpoint + '/user/google_login', {
         tokenId: response.tokenId,
       });
 

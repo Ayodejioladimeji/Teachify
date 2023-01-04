@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-import { isLength, isMatch } from "../../utils/Validation";
-import toast from "react-hot-toast";
-import { Toaster } from "react-hot-toast";
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import { isLength, isMatch } from '../../utils/Validation';
+import toast from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
+const endpoint = process.env.REACT_APP_API;
 
 const initialState = {
-  password: "",
-  cf_password: "",
+  password: '',
+  cf_password: '',
 };
 
 const ResetPassword = () => {
@@ -25,15 +26,15 @@ const ResetPassword = () => {
     if (isLength(password))
       return setData(
         { ...data },
-        toast.error("Password must be at least 6 characters.")
+        toast.error('Password must be at least 6 characters.')
       );
 
     if (!isMatch(password, cf_password))
-      return setData({ ...data }, toast.error("Password did not match"));
+      return setData({ ...data }, toast.error('Password did not match'));
 
     try {
       const res = await axios.post(
-        "/user/reset",
+        endpoint + '/user/reset',
         { password },
         {
           headers: { Authorization: token },
@@ -41,41 +42,41 @@ const ResetPassword = () => {
       );
 
       setData({ ...data }, toast.success(res.data.msg));
-      setData({ password: "", cf_password: "" });
+      setData({ password: '', cf_password: '' });
       setTimeout(() => {
-        window.location.href = "/login";
+        window.location.href = '/login';
       }, 3500);
     } catch (err) {
       err.response.data.msg &&
-        setData({ ...data }, toast.error("password session expired"));
+        setData({ ...data }, toast.error('password session expired'));
     }
   };
 
   return (
-    <div className="forgot">
-      <Toaster position="top-center" reverseOrder={false} />
-      <div className="fg_pass">
+    <div className='forgot'>
+      <Toaster position='top-center' reverseOrder={false} />
+      <div className='fg_pass'>
         <h2>Reset Your Password</h2>
 
-        <div className="row">
-          <label htmlFor="password">Password</label>
+        <div className='row'>
+          <label htmlFor='password'>Password</label>
           <input
-            type="password"
-            name="password"
-            id="password"
+            type='password'
+            name='password'
+            id='password'
             value={password}
             onChange={handleChangeInput}
-            placeholder="Enter your new Password"
+            placeholder='Enter your new Password'
           />
 
-          <label htmlFor="cf_password">Confirm Password</label>
+          <label htmlFor='cf_password'>Confirm Password</label>
           <input
-            type="password"
-            name="cf_password"
-            id="cf_password"
+            type='password'
+            name='cf_password'
+            id='cf_password'
             value={cf_password}
             onChange={handleChangeInput}
-            placeholder="confirm password"
+            placeholder='confirm password'
           />
 
           <button onClick={handleResetPass}>Reset Password</button>

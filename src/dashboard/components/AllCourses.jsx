@@ -8,13 +8,14 @@ import toast from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
 import Pagination from './../../paginate/Pagination';
 import Loading from './../../components/common/Loading';
+const endpoint = process.env.REACT_APP_API;
 
 const EnrolledCourses = () => {
   const [data, setData] = useState('');
   const state = useContext(GlobalState);
   const [courses] = state.courses.courses;
   // const [isAdmin] = state.userApi.admin;
-  const [token] = state.token;
+  const token = localStorage.getItem('token');
   const [callback, setCallback] = state.courses.callback;
   const [loading, setLoading] = state.courses.loading;
 
@@ -40,13 +41,13 @@ const EnrolledCourses = () => {
       if (result.isConfirmed) {
         try {
           const destroyImg = axios.post(
-            '/api/destroy',
+            endpoint + '/api/destroy',
             { public_id },
             {
               headers: { Authorization: token },
             }
           );
-          const deleteCourse = axios.delete(`/api/courses/${id}`, {
+          const deleteCourse = axios.delete(endpoint + `/api/courses/${id}`, {
             headers: { Authorization: token },
           });
 

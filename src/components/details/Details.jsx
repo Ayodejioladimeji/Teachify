@@ -17,7 +17,6 @@ import Loading from './../common/Loading';
 const Details = () => {
   const state = useContext(GlobalState);
   const [course] = state.course.course;
-  const [token] = state.token;
   const [isLogged] = state.userApi.isLogged;
   const [loading, setLoading] = useState(true);
   const [detailCourse, setDetailCourse] = useState([]);
@@ -27,6 +26,8 @@ const Details = () => {
   const [cart] = state.userApi.cart;
   const addCart = state.userApi.addCart;
   const [values, setValues] = useState([]);
+  const endpoint = process.env.REACT_APP_API;
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
     if (params) {
@@ -40,7 +41,7 @@ const Details = () => {
 
   useEffect(() => {
     const getCourse = async () => {
-      const res = await axios.get(`/api/courses/${params.id}`, {
+      const res = await axios.get(endpoint + `/api/courses/${params.id}`, {
         headers: { Authorization: token },
       });
       setValues(res.data.course[0].user);
@@ -48,7 +49,7 @@ const Details = () => {
       // setLoading(false);
     };
     getCourse();
-  }, [params, token]);
+  }, [params, endpoint, token]);
 
   const goBack = () => {
     history.goBack();

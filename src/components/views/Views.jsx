@@ -10,6 +10,7 @@ import { isEmpty } from './../../utils/Validation';
 import { showErrMsg } from './../../utils/Notification';
 import Feedback from './../details/Feedback';
 import Loading from './../common/Loading';
+const endpoint = process.env.REACT_APP_API;
 
 const initialState = {
   rating: '',
@@ -21,7 +22,7 @@ const Views = () => {
   const [values, setValues] = useState(initialState);
   const state = useContext(GlobalState);
   const [course] = state.course.course;
-  const [token] = state.token;
+  const token = localStorage.getItem('token');
   const [loading, setLoading] = useState(true);
   const [callback, setCallback] = state.course.callback;
   const [back, setBack] = state.courses.back;
@@ -75,7 +76,7 @@ const Views = () => {
       if (result.isConfirmed) {
         try {
           const res = await axios.post(
-            `/api/courses/${_id}/reviews`,
+            endpoint + `/api/courses/${_id}/reviews`,
             {
               ...values,
             },

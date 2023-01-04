@@ -5,6 +5,7 @@ import { Toaster } from 'react-hot-toast';
 import '../styles/Profile.css';
 import { GlobalState } from './../../GlobalState';
 import Loading from './../../components/common/Loading';
+const endpoint = process.env.REACT_APP_API;
 
 const initialState = {
   fullname: '',
@@ -21,8 +22,8 @@ const EditProfile = () => {
   const avatarRef = useRef(null);
   const [buttonLoading] = useState(false);
   const state = useContext(GlobalState);
+  const token = localStorage.getItem('token');
   const [loading, setLoading] = state.userApi.loading;
-  const [token] = state.token;
   const user = state.userApi.user[0];
   const [callback, setCallback] = state.userApi.callback;
 
@@ -55,7 +56,7 @@ const EditProfile = () => {
       formData.append('file', file);
 
       setLoading(true);
-      const res = await axios.post('/api/upload_avatar', formData, {
+      const res = await axios.post(endpoint + '/api/upload_avatar', formData, {
         headers: {
           'content-type': 'multipart/form-data',
           Authorization: token,
@@ -73,7 +74,7 @@ const EditProfile = () => {
   const updateInfor = () => {
     try {
       axios.patch(
-        '/user/update',
+        endpoint + '/user/update',
         {
           fullname: fullname ? fullname : user.fullname,
           username: username ? username : user.username,

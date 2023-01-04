@@ -6,12 +6,13 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
 import { isEmpty } from '../../utils/Validation';
+const endpoint = process.env.REACT_APP_API;
 
 const Categories = () => {
   const state = useContext(GlobalState);
-  const [token] = state.token;
   const [categories] = state.categories.categories;
   const [callback, setCallback] = state.categories.callback;
+  const token = localStorage.getItem('token');
   const [category, setCategory] = useState('');
   const [onEdit, setOnEdit] = useState(false);
   const [id, setID] = useState('');
@@ -26,7 +27,7 @@ const Categories = () => {
     try {
       if (onEdit) {
         const res = await axios.put(
-          `/api/category/${id}`,
+          endpoint + `/api/category/${id}`,
           { name: category },
           {
             headers: { Authorization: token },
@@ -35,7 +36,7 @@ const Categories = () => {
         toast.success(res.data.msg);
       } else {
         const res = await axios.post(
-          '/api/category',
+          endpoint + '/api/category',
           { name: category },
           {
             headers: { Authorization: token },
@@ -71,7 +72,7 @@ const Categories = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`/api/category/${id}`, {
+          await axios.delete(endpoint + `/api/category/${id}`, {
             headers: { Authorization: token },
           });
           Swal.fire('Categories', 'Deleted.', 'success');

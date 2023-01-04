@@ -14,16 +14,19 @@ import { format } from 'timeago.js';
 import { toast } from 'react-hot-toast';
 import Swal from 'sweetalert2';
 import Loading from './../common/Loading';
+const endpoint = process.env.REACT_APP_API;
+
+//
 
 const SocialDisplay = ({ socket }) => {
   const state = useContext(GlobalState);
   const [data] = state.post.post;
-  const [token] = state.token;
   const [user] = state.userApi.user;
   const [callback, setCallback] = state.post.callback;
   const [show, setShow] = useState('');
   const [loading] = state.post.loading;
   const [result, setResult] = useState([]);
+  const token = localStorage.getItem('token');
 
   // The section that deletes a post
   const deletePost = async (id, public_id) => {
@@ -39,14 +42,14 @@ const SocialDisplay = ({ socket }) => {
       if (result.isConfirmed) {
         try {
           const destroyImg = axios.post(
-            '/api/destroy',
+            endpoint + '/api/destroy',
             { public_id },
             {
               headers: { Authorization: token },
             }
           );
 
-          const deleteIt = axios.delete(`/api/post/${id}`, {
+          const deleteIt = axios.delete(endpoint + `/api/post/${id}`, {
             headers: {
               Authorization: token,
             },
@@ -66,7 +69,7 @@ const SocialDisplay = ({ socket }) => {
   // The section that deletes a post without images
   const del = async (id) => {
     try {
-      axios.delete(`/api/post/${id}`, {
+      axios.delete(endpoint + `/api/post/${id}`, {
         headers: {
           Authorization: token,
         },
@@ -84,7 +87,7 @@ const SocialDisplay = ({ socket }) => {
     });
     try {
       const res = await axios.put(
-        '/api/post/like',
+        endpoint + '/api/post/like',
         { postId: id },
         {
           headers: { Authorization: token },
@@ -110,7 +113,7 @@ const SocialDisplay = ({ socket }) => {
   const unlikePost = async (id) => {
     try {
       const res = await axios.put(
-        '/api/post/unlike',
+        endpoint + '/api/post/unlike',
         { postId: id },
         {
           headers: { Authorization: token },
@@ -135,7 +138,7 @@ const SocialDisplay = ({ socket }) => {
   const handleComment = async (text, postId) => {
     try {
       const res = await axios.post(
-        '/api/post/comment',
+        endpoint + '/api/post/comment',
         { postId, text },
         {
           headers: { Authorization: token },

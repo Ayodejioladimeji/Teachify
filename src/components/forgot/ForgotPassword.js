@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import axios from "axios";
-
-import { isEmail } from "../../utils/Validation";
-import toast from "react-hot-toast";
-import { Toaster } from "react-hot-toast";
-import "./ForgotPassword.css";
+import React, { useState } from 'react';
+import axios from 'axios';
+import { isEmail } from '../../utils/Validation';
+import toast from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
+import './ForgotPassword.css';
+const endpoint = process.env.REACT_APP_API;
 
 const initialState = {
-  email: "",
+  email: '',
 };
 
 const ForgotPassword = () => {
@@ -22,13 +22,13 @@ const ForgotPassword = () => {
 
   const forgotPassword = async () => {
     if (!isEmail(email))
-      return setData({ ...data }, toast.error("invalid Email"));
+      return setData({ ...data }, toast.error('invalid Email'));
 
     try {
-      const res = await axios.post("/user/forgot", { email });
+      const res = await axios.post(endpoint + '/user/forgot', { email });
 
       setData({ ...data }, toast.success(res.data.msg));
-      setData({ email: "" });
+      setData({ email: '' });
       //   setTimeout(() => {
       //     history.push = "/login";
       //   }, 3500);
@@ -39,17 +39,17 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="forgot">
-      <Toaster position="top-center" reverseOrder={false} />
-      <div className="fg_pass">
+    <div className='forgot'>
+      <Toaster position='top-center' reverseOrder={false} />
+      <div className='fg_pass'>
         <h2>Forgot Your Password?</h2>
 
-        <div className="row">
-          <label htmlFor="email">Enter your email address</label>
+        <div className='row'>
+          <label htmlFor='email'>Enter your email address</label>
           <input
-            type="email"
-            name="email"
-            id="email"
+            type='email'
+            name='email'
+            id='email'
             value={email}
             onChange={handleChangeInput}
           />

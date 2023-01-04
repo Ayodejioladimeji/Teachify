@@ -7,6 +7,7 @@ import InstructorBoardTwo from './InstructorBoardTwo';
 import { GlobalState } from './../../GlobalState';
 import { toast } from 'react-hot-toast';
 import { isEmpty } from './../../utils/Validation';
+const endpoint = process.env.REACT_APP_API;
 
 const steps = [{ id: 'stepone' }, { id: 'steptwo' }, { id: 'stepthree' }];
 
@@ -20,12 +21,12 @@ const initialState = {
 export const Step = () => {
   const [data, setData] = useState(initialState);
   const state = useContext(GlobalState);
-  const [token] = state.token;
   const user = state.userApi.user[0];
   const [callback, setCallback] = state.userApi.callback;
 
   const { step, navigation } = useStep({ steps, initialStep: 0 });
   const { audience, typeOfTeaching, videoPro } = data;
+  const token = localStorage.getItem('token');
 
   // The handlechange section
   const handleChange = (e) => {
@@ -43,7 +44,7 @@ export const Step = () => {
 
     try {
       axios.patch(
-        '/user/authorize',
+        endpoint + '/user/authorize',
         {
           audience: audience ? audience : user.audience,
           videoPro: videoPro ? videoPro : user.videoPro,

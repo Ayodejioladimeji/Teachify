@@ -5,18 +5,19 @@ import './InstructorProfile.css';
 import Card from './../card/Card';
 import { GlobalState } from './../../GlobalState';
 import Loading from './../common/Loading';
+const endpoint = process.env.REACT_APP_API;
 
 const InstructorProfile = () => {
   const state = useContext(GlobalState);
-  const [token] = state.token;
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const history = useHistory();
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
     const getInstructor = async () => {
-      const res = await axios.get(`/api/courses/instructor/${id}`, {
+      const res = await axios.get(endpoint + `/api/courses/instructor/${id}`, {
         headers: { Authorization: token },
       });
       setData(res.data);

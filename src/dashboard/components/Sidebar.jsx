@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import axios from 'axios';
 import '../styles/sidebar.css';
 import {
   Dashboard,
@@ -18,6 +17,8 @@ import { NavLink } from 'react-router-dom';
 import { GlobalState } from './../../GlobalState';
 import Loading from './../../components/common/Loading';
 
+//
+
 const Sidebar = () => {
   const state = useContext(GlobalState);
   const user = state.userApi.user[0];
@@ -27,9 +28,7 @@ const Sidebar = () => {
 
   // THE SECTION OF THE LOGOUT FUNCTION
   const logoutUser = async () => {
-    await axios.get('/user/logout');
-    localStorage.removeItem('firstLogin');
-    sessionStorage.removeItem('user');
+    localStorage.clear();
     window.location.href = '/';
   };
 

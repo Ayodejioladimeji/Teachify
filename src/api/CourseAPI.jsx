@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+const endpoint = process.env.REACT_APP_API;
 
 function CourseAPI() {
   const [courses, setCourses] = useState([]);
@@ -9,7 +10,7 @@ function CourseAPI() {
 
   useEffect(() => {
     const getCourses = async () => {
-      const res = await axios.get(`/api/courses`);
+      const res = await axios.get(endpoint + `/api/courses`);
       setCourses(res.data['courses']);
       setResult(res.data['result']);
       setLoading(false);
